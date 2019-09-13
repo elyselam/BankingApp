@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.app.system.BankApplication;
 import com.company.platform.Application;
 
 import java.io.BufferedReader;
@@ -14,69 +15,12 @@ public class Main {
     private static String appTitle;
 
     public static void main(String[] args) {
-        String[] config = loadConfig();
-        parseArgs(config);
-        Application app = init(className, appTitle);
+        Application app = new BankApplication();
 
         app.run(args);
     }
 
-    private static String[] loadConfig() {
-        BufferedReader br = null;
-        FileReader fr = null;
-        try {
-            fr = new FileReader("app.properties");
-            br = new BufferedReader(fr);
-            String[] args = new String[100];
-            String line;
-            int lineCount = 0;
 
-            while((line = br.readLine()) != null) {
-                args[lineCount++] = line;
-            }
-
-            return args;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            if(fr != null) {
-                try {
-                    fr.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return new String[]{};
-    }
-
-    private static void parseArgs(String[] args) {
-        for(String s : args) {
-            if(s != null) {
-                String[] tokens = s.split("=");
-                String key = tokens[0];
-                String value = tokens[1];
-
-                if("rootApp".equals(key)) {
-                    className = value;
-
-                } else if("title".equals(key)) {
-                    appTitle = value;
-                }
-            }
-        }
-    }
 
     private static Application init(String className) {
         Object o;

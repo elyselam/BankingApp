@@ -25,8 +25,8 @@ public class BalanceUpdateService {
 
     //check balances
     public double checkBalance(double balance, String id) {
-        Account account = new Account();
-        return account.getBalance();
+        //Account account = new Account();
+        return 0;//account.getBalance();
     }
 
 

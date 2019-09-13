@@ -10,40 +10,42 @@ import java.util.Scanner;
 public class LoginScreen implements Screen {
 
     public Screen doScreen(Scanner scanner, Application app) {
-        System.out.println("Enter your credentials");
+        System.out.println("Please log in");
         Screen screen = null;
         try {
             screen = doInput(scanner);
+//            System.out.println(screen.doInput());
         }catch(InputMismatchException ex) {
             System.out.println("Input Mismatch");
             scanner.next();
-            screen = new WelcomeScreen();
+           //screen = new LoginScreen(scanner, app);
         } catch(RuntimeException ex){
+            System.out.println(ex);
 
         }catch(Exception ex) {
-
-        } finally {
-            //will always run
-            System.out.println("Finally");
+            System.out.println(ex);
+//        } finally {
+//           // will always run
+//            System.out.println("try again");
         }
         return screen;
     }
 
 
-    private Screen doInput(Scanner scanner) throws Exception {
+    public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
         //if input is "customer"
         if (i.equals("customer")){
-            newScreen = (Screen) new CustomerHomeScreen();
+            newScreen =  new CustomerHomeScreen();
 
-            //if input is " employee
+            //if input is "employee"
         } else if (i.equals("employee")) {
             newScreen = new EmployeeScreen();
 
             //else go back to WelcomeScreen
         } else {
-            newScreen = new WelcomeScreen();
+            newScreen = new LoginScreen();
         }
         return newScreen;
     }
