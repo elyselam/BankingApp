@@ -6,15 +6,10 @@ public class Account {
     private final int id;
     private double balance = 0;
 
-
     public Account() {
-//        //balance starts at 0
-//        this.balance = balance;
-
         //generate random numbers for customer id in range 10,000
         SecureRandom idGenerator = new SecureRandom();
         this.id = idGenerator.nextInt(10000);
-
     }
 
     public int getId() {
@@ -30,5 +25,4 @@ public class Account {
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
 }

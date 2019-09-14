@@ -1,4 +1,4 @@
-package com.company.app.screens.employee;
+package com.company.app.services;
 
 //employee creates account
 //make instance of Account class
@@ -6,13 +6,13 @@ package com.company.app.screens.employee;
 import com.company.app.models.Account;
 import com.company.app.models.Customer;
 
-public class AddClient {
+public class AddClientService {
 
-    public void createCustomer(String firstName, String lastName, String email, String password){
+    public void createCustomer(String email, String password){
         Customer newCustomer = new Customer(firstName, lastName, email, password);
     }
 
-    public void createAccount(int id, double balance) {
+    public void createAccount() {
         Account newClient = new Account(id, balance);
 
     }

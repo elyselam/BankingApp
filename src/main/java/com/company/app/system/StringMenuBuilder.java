@@ -22,7 +22,7 @@ public class StringMenuBuilder implements MenuBuilder {
         key. value delimiter
         //
         LoginScreen
-        addOption("1", "Login")
+        addOption("Please log in")
 
         //
         CustomerHomeScreen
@@ -30,7 +30,7 @@ public class StringMenuBuilder implements MenuBuilder {
         addOption("2", "Withdraw")
         addOption("3", "View Balance")
         addOption("4", "View Transaction History")
-        addOption("5", "Exit")
+        addOption("5", "Logout")
 
         //
         EmployeeHomeScreen

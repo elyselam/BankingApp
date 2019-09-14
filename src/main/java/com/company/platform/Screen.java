@@ -8,6 +8,6 @@ import java.util.Scanner;
 public interface Screen {
 
     Screen doScreen(Scanner scanner, Application app);
-    Screen doInput(Scanner scanner) throws Exception;
+    //Screen doInput(Scanner scanner) throws Exception;
 
 }

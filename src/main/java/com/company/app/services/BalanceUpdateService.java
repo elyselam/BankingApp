@@ -21,5 +21,9 @@ public class BalanceUpdateService {
         return bal;
     }
 
+    public double viewBalance(Account acct) {
+        return acct.getBalance();
+    }
+
 
 }
