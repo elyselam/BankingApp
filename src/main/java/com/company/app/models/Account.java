@@ -3,13 +3,13 @@ package com.company.app.models;
 import java.security.SecureRandom;
 
 public class Account {
-    private int id;
-    private double balance;
+    private final int id;
+    private double balance = 0;
 
 
-    public Account(int id, double balance) {
-        //balance starts at 0
-        this.balance = balance;
+    public Account() {
+//        //balance starts at 0
+//        this.balance = balance;
 
         //generate random numbers for customer id in range 10,000
         SecureRandom idGenerator = new SecureRandom();

@@ -1,7 +1,9 @@
 package com.company.app.screens.customer;
 
+import com.company.app.models.Account;
 import com.company.app.screens.LoginScreen;
 import com.company.app.screens.employee.EmployeeScreen;
+import com.company.app.services.BalanceUpdateService;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -31,6 +33,11 @@ public class CustomerHomeScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
+
+        switch (i) {
+            case 1:
+                //return balance
+        }
 
         return newScreen;
     }

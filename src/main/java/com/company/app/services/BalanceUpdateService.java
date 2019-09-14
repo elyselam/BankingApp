@@ -4,36 +4,22 @@ import com.company.app.models.Account;
 
 public class BalanceUpdateService {
 
-    public double deposit(double balance, double amount) {
-        if (balance < 0) {
+    public double deposit(Account acct, double amount) {
+        acct.setBalance(acct.getBalance()+amount);
+        return acct.getBalance();
+    }
+
+
+
+    public double withdrawal(Account acct, double balance, double amount) {
+        double bal = acct.getBalance();
+        if (bal < 0) {
             System.out.println("Transaction failed, you have no money!");
         } else {
-            balance = balance + amount;
+            acct.setBalance(bal - amount);
         }
-        return balance;
+        return bal;
     }
-
-    public double withdraw(double balance, double amount) {
-        if (balance < 0) {
-            System.out.println("Transaction failed, you have no money!");
-        } else {
-            balance = balance - amount;
-        }
-        return balance;
-    }
-
-
-    //check balances
-    public double checkBalance(double balance, String id) {
-        //Account account = new Account();
-        return 0;//account.getBalance();
-    }
-
-
-
-
-
-
 
 
 }
