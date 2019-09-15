@@ -10,7 +10,7 @@ import com.company.platform.Screen;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AddClientScreen {
+public class AddClientScreen implements Screen {
     public Screen doScreen(Scanner scanner, Application app) {
         System.out.println("What is the customer email?");
         Screen screen = null;
@@ -31,7 +31,7 @@ public class AddClientScreen {
 
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
-
+        Screen newScreen = null;
         AddClientService addEmail = new AddClientService();
 
         //takes in email and creates a unique account
@@ -41,5 +41,6 @@ public class AddClientScreen {
         //after successfully adding account, confirms client has been added and send them to LoginScreen
 
         System.out.println("Account successfully added!");
+        return newScreen;
     }
 }

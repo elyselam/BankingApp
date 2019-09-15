@@ -39,7 +39,7 @@ public class EmployeeScreen implements Screen {
         return screen;
     }
 
-    @Override
+
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
@@ -47,7 +47,7 @@ public class EmployeeScreen implements Screen {
 
 
         if (i.equals("1")){
-            newScreen = new AddClientScreen;
+            newScreen = new AddClientScreen();
 //            AddClientService addClient = new AddClientService();
 //            addClient.clientList()
 
@@ -55,6 +55,6 @@ public class EmployeeScreen implements Screen {
         } else {
             newScreen = new LoginScreen();
         }
-
+        return newScreen;
     }
 }

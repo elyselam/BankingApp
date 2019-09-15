@@ -46,15 +46,15 @@ public class CustomerHomeScreen implements Screen {
         BalanceUpdateService bal = new BalanceUpdateService();
 
         if (i.equals("1")){
-            return bal.deposit().;
+            return bal.deposit();
 
 
         } else if (i.equals("2")) {
-            return bal.withdrawal().;
+            return bal.withdrawal();
 
 
         } else if (i.equals("3")) {
-        return bal.viewBalance().;
+        return bal.viewBalance();
 
         } else if (i.equals("4")) {
             return 0;
