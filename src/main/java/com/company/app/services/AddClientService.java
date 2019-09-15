@@ -16,11 +16,12 @@ import java.util.HashMap;
 
 public class AddClientService {
 
-    //<email, {id, balance}
+    //i want {email, {id, balance}}
     HashMap<String, Account> clientList= new HashMap();
 
     public void createAccount(String  email) {
         Account newClient = new Account();
+        //(email, Account{id, balance})
         clientList.put(email, newClient);
     }
     //output file

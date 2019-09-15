@@ -32,14 +32,14 @@ public class AddClientScreen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
 
-
         AddClientService addEmail = new AddClientService();
 
         //takes in email and creates a unique account
+        // adds to clientList
         addEmail.createAccount(i);
 
         //after successfully adding account, confirms client has been added and send them to LoginScreen
 
-        System.out.println("Account successfuly added!");
+        System.out.println("Account successfully added!");
     }
 }

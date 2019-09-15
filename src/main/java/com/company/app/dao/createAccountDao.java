@@ -7,7 +7,7 @@ import java.io.*;
 
 public class createAccountDao {
 
-
+    //clientList
     public void writeObject(String filename, Object obj) {
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename)){
             oos.writeObject(obj)
