@@ -45,9 +45,14 @@ public class EmployeeScreen implements Screen {
         Screen newScreen = null;
         BalanceUpdateService bal = new BalanceUpdateService();
 
+        //AddClientService
         if (i.equals("1")){
-            AddClientService addClient = AddClientService();
+            AddClientService addClient = new AddClientService();
             createAccount()
+
+         //exit
+        } else {
+            newScreen = new LoginScreen();
         }
 
     }

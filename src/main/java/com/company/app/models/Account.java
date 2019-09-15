@@ -1,8 +1,10 @@
 package com.company.app.models;
 
+import java.io.Serializable;
 import java.security.SecureRandom;
 
-public class Account {
+//Serialize Account
+public class Account implements Serializable {
     private final int id;
     private double balance = 0;
 

@@ -40,6 +40,6 @@ public class AddClientScreen {
 
         //after successfully adding account, confirms client has been added and send them to LoginScreen
 
-        System.out.println("successfuly added!");
+        System.out.println("Account successfuly added!");
     }
 }
