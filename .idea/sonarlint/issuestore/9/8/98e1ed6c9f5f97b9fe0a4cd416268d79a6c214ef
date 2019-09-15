@@ -1,0 +1,10 @@
+
+nsquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(×‡ò´ùÿÿÿÿ8¯ÚÖ”Ó-
+\squid:S1854">Remove this useless assignment to local variable "addAccount".(Ÿ«‚†8¯ÚÖ”Ó-
+d
+squid:S899#"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8¯ÚÖ”Ó-
+Msquid:S1481"/Remove this unused "addAccount" local variable.(Ÿ«‚†8¯ÚÖ”Ó-
+csquid:UnusedPrivateMethod"2Remove this unused private "createAccount" method.(®Â€Öşÿÿÿÿ8¯ÚÖ”Ó-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(õ²”‹ıÿÿÿÿ8¯ÚÖ”Ó-
+Fsquid:S1148)"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¯ÚÖ”Ó-
+Isquid:UselessImportCheck"Remove this duplicated import.(´‘¨™8¯ÚÖ”Ó-

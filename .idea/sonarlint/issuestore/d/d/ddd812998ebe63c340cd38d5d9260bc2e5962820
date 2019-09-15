@@ -1,0 +1,8 @@
+
+jsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(«éĞùÿÿÿÿ
+Bsquid:UselessImportCheck"Remove this duplicated import.(´‘¨™
+Xsquid:UselessImportCheck"5Remove this unused import 'java.io.FileOutputStream'.(˜«ªg
+Ysquid:UselessImportCheck"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ
+tsquid:UselessImportCheck
+"PRemove this unused import 'com.fasterxml.jackson.databind.JsonMappingException'.(÷™‹Í
+ssquid:UselessImportCheck	"JRemove this unused import 'com.fasterxml.jackson.core.JsonParseException'.(¸Ôéÿıÿÿÿÿ

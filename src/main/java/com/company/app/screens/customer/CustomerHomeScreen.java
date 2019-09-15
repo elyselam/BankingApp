@@ -1,9 +1,6 @@
 package com.company.app.screens.customer;
 
-import com.company.app.models.Account;
-import com.company.app.models.Customer;
 import com.company.app.screens.LoginScreen;
-import com.company.app.screens.employee.EmployeeScreen;
 import com.company.app.services.BalanceUpdateService;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
@@ -21,8 +18,8 @@ public class CustomerHomeScreen implements Screen {
                 .addOption("1", "Deposit")
                 .addOption("2", "Withdraw")
                 .addOption("3", "View Balance")
-                .addOption("4", "View Transaction History")
-                .addOption("5", "Logout")
+
+                .addOption("4", "Logout")
                 .build();
 
         System.out.println(menuText);

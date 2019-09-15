@@ -1,0 +1,22 @@
+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(—×á‹ıÿÿÿÿ8ÂÍŠÓ-
+Qsquid:S1191"5Use classes from the Java API instead of Sun classes.(ÛÖ ¢8³ç“ŠÓ-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8šŠïÖÒ-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(¹ÇŠˆıÿÿÿÿ8ÂÍŠÓ-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8šŠïÖÒ-
+esquid:S2147"DCombine this catch with the one at line 35, which has the same body.(±Ÿ—±ÿÿÿÿÿ8šŠïÖÒ-
+Ysquid:UselessImportCheck"0Remove this unused import 'sun.rmi.runtime.Log'.(ÛÖ ¢8³ç“ŠÓ-
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(ºˆ–k8º¸ÿ…Ó-
+S
+squid:S106"9Replace this use of System.out or System.err by a logger.(õóşI8ÂÍŠÓ-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(Åê–¨8ëÅÎÖÒ-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8šŠïÖÒ-
+hsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¨šóùÿÿÿÿ8Á‘“Ó-
+§%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¨šóùÿÿÿÿ8Á‘“Ó-

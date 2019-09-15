@@ -10,45 +10,36 @@ import com.company.platform.Screen;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class EmployeeScreen implements Screen {
-
-
-    @Override
+public class AddClientScreen {
     public Screen doScreen(Scanner scanner, Application app) {
-        System.out.println("Welcome back! How can we help you today?");
-        String menuText = "";
-        menuText = new StringMenuBuilder().
-                addOption("1", "CreateAccount").
-                addOption("2", "Exit")
-                .build();
-
-        System.out.println(menuText);
-
+        System.out.println("What is the customer email?");
         Screen screen = null;
         try {
             screen = doInput(scanner);
-        } catch (InputMismatchException ex) {
+        }catch(InputMismatchException ex) {
             System.out.println("Input Mismatch");
             scanner.next();
-        } catch (RuntimeException ex) {
+        } catch(RuntimeException ex){
             System.out.println(ex);
 
-        } catch (Exception ex) {
+        }catch(Exception ex) {
             System.out.println(ex);
         }
         return screen;
     }
 
-    @Override
+
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
-        Screen newScreen = null;
-        BalanceUpdateService bal = new BalanceUpdateService();
 
-        if (i.equals("1")){
-            AddClientService addClient = AddClientService();
-            createAccount()
-        }
 
+        AddClientService addEmail = new AddClientService();
+
+        //takes in email and creates a unique account
+        addEmail.createAccount(i);
+
+        //after successfully adding account, confirms client has been added and send them to LoginScreen
+
+        System.out.println("successfuly added!");
     }
 }

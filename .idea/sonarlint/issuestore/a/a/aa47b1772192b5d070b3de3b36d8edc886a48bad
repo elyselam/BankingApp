@@ -1,0 +1,17 @@
+
+ksquid:UselessImportCheck"@Remove this unused import 'com.company.app.screens.LoginScreen'.(±â—º8œ¶’Ó-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(Åê–¨8¶Ÿì…Ó-
+Zsquid:S1854."7Remove this useless assignment to local variable "bal".(°Ë¡Åüÿÿÿÿ8œ¶’Ó-
+Qsquid:S1481-".Remove this unused "newScreen" local variable.(­èÿïûÿÿÿÿ8œ¶’Ó-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8¶Ÿì…Ó-
+gsquid:S2147$"DCombine this catch with the one at line 32, which has the same body.(±Ÿ—±ÿÿÿÿÿ8¶Ÿì…Ó-
+V
+squid:S106%"9Replace this use of System.out or System.err by a logger.(ö¬8¶Ÿì…Ó-
+V
+squid:S106""9Replace this use of System.out or System.err by a logger.(ö¬8¶Ÿì…Ó-
+Ksquid:S1481."(Remove this unused "bal" local variable.(°Ë¡Åüÿÿÿÿ8œ¶’Ó-
+U
+squid:S106"9Replace this use of System.out or System.err by a logger.(ºˆ–k8¶Ÿì…Ó-
+Hsquid:S001080")Either remove or fill this block of code.(˜ùÂê8Şò†•Ó-

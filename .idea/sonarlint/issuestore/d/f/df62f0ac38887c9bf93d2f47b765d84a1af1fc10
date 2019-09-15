@@ -1,2 +1,14 @@
 
-Ysquid:S2094"BRemove this empty class, write its code or make it an "interface".(þ´øÉ
+hsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ïÀ›D8ÕÕº•Ó-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(¦¼¸²8ÕÕº•Ó-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ŒÒ¯žøÿÿÿÿ8ÕÕº•Ó-
+gsquid:S2147"DCombine this catch with the one at line 22, which has the same body.(±Ÿ—±ÿÿÿÿÿ8ž¯¶ÖÒ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8ž¯¶ÖÒ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8ØšâÃÒ-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(­ÞÝ°8ÕÕº•Ó-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8±á´ÖÒ-
+nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÞÚþþÿÿÿÿ8ÕÕº•Ó-
