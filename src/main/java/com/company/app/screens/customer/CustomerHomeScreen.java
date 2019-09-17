@@ -60,7 +60,7 @@ public class CustomerHomeScreen implements Screen {
 
         //exit and returns to LoginScreen
         } else if (i.equals("4")) {
-            return ;
+            newScreen = new CustomerHomeScreen;
 
     }
 }

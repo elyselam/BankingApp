@@ -3,7 +3,7 @@ package com.company.app.models;
 import java.io.Serializable;
 import java.security.SecureRandom;
 
-//Serialize Account
+//Serialize Account for createAccountDao
 public class Account implements Serializable {
     private final int id;
     private double balance = 0;

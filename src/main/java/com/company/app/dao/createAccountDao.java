@@ -27,7 +27,7 @@ public class createAccountDao {
     }
 
     //clientList
-    public void writeObject(String filename, Object obj){
+    public void writeObject(String filename, Object clientList){
         try(ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filename))){
             output.writeObject(clientList);
         } catch (FileNotFoundException e) {

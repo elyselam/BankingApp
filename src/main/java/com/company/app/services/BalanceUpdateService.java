@@ -5,7 +5,7 @@ import com.company.app.models.Account;
 public class BalanceUpdateService {
 
     public double deposit(Account acct, double amount) {
-        acct.setBalance(acct.getBalance()+amount);
+        acct.setBalance(acct.getBalance() + amount);
         return acct.getBalance();
     }
 

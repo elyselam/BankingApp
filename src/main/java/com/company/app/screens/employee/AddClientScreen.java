@@ -1,7 +1,7 @@
 package com.company.app.screens.employee;
 
 import com.company.app.screens.LoginScreen;
-import com.company.app.services.AddClientService;
+import com.company.app.dao.createAccountDao;
 import com.company.app.services.BalanceUpdateService;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
@@ -32,14 +32,14 @@ public class AddClientScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
+
         AddClientService addEmail = new AddClientService();
 
         //takes in email and creates a unique account
         // adds to clientList
         addEmail.createAccount(i);
 
-        //after successfully adding account, confirms client has been added and send them to LoginScreen
-
+        //after successfully adding account, confirms client has been added and send them back to LoginScreen
         System.out.println("Account successfully added!");
         return newScreen;
     }
