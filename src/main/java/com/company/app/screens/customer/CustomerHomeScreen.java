@@ -18,7 +18,6 @@ public class CustomerHomeScreen implements Screen {
                 .addOption("1", "Deposit")
                 .addOption("2", "Withdraw")
                 .addOption("3", "View Balance")
-
                 .addOption("4", "Logout")
                 .build();
 
@@ -45,25 +44,23 @@ public class CustomerHomeScreen implements Screen {
         Screen newScreen = null;
         BalanceUpdateService bal = new BalanceUpdateService();
 
+        //deposit
+        //intake amount,
+        //confirms intake with new balance
         if (i.equals("1")){
             return bal.deposit();
 
-
+        //withdraw
         } else if (i.equals("2")) {
             return bal.withdrawal();
 
-
+        //viewBalance
         } else if (i.equals("3")) {
         return bal.viewBalance();
 
+        //exit and returns to LoginScreen
         } else if (i.equals("4")) {
-            return 0;
-        }
+            return ;
 
-        //if 5, Logout
-        else {
-            newScreen = new LoginScreen();
-        }
-        return newScreen;
     }
 }
