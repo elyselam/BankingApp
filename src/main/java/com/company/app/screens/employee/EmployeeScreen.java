@@ -1,6 +1,6 @@
 package com.company.app.screens.employee;
 
-import com.company.app.screens.LoginScreen;
+import com.company.app.screens.WelcomeScreen;
 import com.company.app.services.AddClientService;
 import com.company.app.services.BalanceUpdateService;
 import com.company.app.system.StringMenuBuilder;
@@ -53,7 +53,7 @@ public class EmployeeScreen implements Screen {
 
          //exit back to LoginScreen
         } else {
-            newScreen = new LoginScreen();
+            newScreen = new WelcomeScreen();
         }
         return newScreen;
     }

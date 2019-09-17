@@ -2,15 +2,23 @@ package com.company.app.screens;
 
 import com.company.app.screens.customer.CustomerHomeScreen;
 import com.company.app.screens.employee.EmployeeScreen;
+import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class LoginScreen implements Screen {
+public class WelcomeScreen implements Screen {
 
     public Screen doScreen(Scanner scanner, Application app) {
-        System.out.println("Please log in");
+        System.out.println("Are you a customer or an employee?");
+        String menuText = "";
+        menuText = new StringMenuBuilder().
+                addOption("1", "Customer").
+                addOption("2", "Employee")
+                .build();
+
+        System.out.println(menuText);
         Screen screen = null;
         try {
             screen = doInput(scanner);
@@ -35,17 +43,15 @@ public class LoginScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
+
         //if input is "customer"
-        if (i.equals("customer")){
+        if (i.equals("1")){
             newScreen =  new CustomerHomeScreen();
 
             //if input is "employee"
-        } else if (i.equals("employee")) {
+        } else if (i.equals("2")) {
             newScreen = new EmployeeScreen();
 
-            //else go back to WelcomeScreen
-        } else {
-            newScreen = new LoginScreen();
         }
         return newScreen;
     }

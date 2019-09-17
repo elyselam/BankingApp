@@ -1,6 +1,6 @@
 package com.company.app.system;
 
-import com.company.app.screens.LoginScreen;
+import com.company.app.screens.WelcomeScreen;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -11,7 +11,7 @@ public class BankApplication extends Application {
     private Scanner scanner;
 
     public BankApplication() {
-        currentScreen = new LoginScreen();
+        currentScreen = new WelcomeScreen();
         scanner = new Scanner(System.in);
 
     }

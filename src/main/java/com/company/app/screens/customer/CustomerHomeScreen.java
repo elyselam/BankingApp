@@ -1,6 +1,5 @@
 package com.company.app.screens.customer;
 
-import com.company.app.screens.LoginScreen;
 import com.company.app.services.BalanceUpdateService;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
@@ -10,7 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CustomerHomeScreen implements Screen {
-    @Override
+
     public Screen doScreen(Scanner scanner, Application app) {
         System.out.println("Welcome back! How can we help you today?");
         String menuText = "";

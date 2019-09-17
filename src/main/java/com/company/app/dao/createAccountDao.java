@@ -10,16 +10,18 @@ public class createAccountDao {
     //output file
     public static final String filename = "src/resources/data.txt";
     //object
-    private static HashMap<String, Account> clientList;
+    private static HashMap<String, Account> clientList = new HashMap<>();
 
-    public class AddClientService {
 
-        //object = {email, {id, balance}}
+
+    public void AddClientServiceToDatabase {
+
+        //object = {email, {id, password, balance}}
         HashMap<String, Account> clientList = new HashMap();
 
-        public void createAccount(String  email) {
+        public void createAccount(String email) {
             Account newClient = new Account();
-            //(email, Account{id, balance})
+            //(email, Account{id, password, balance})
             clientList.put(email, newClient);
         }
 

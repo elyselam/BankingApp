@@ -1,14 +1,18 @@
-package com.company.app.screens.employee;
+package com.company.app.screens.customer;
 
+import com.company.app.services.BalanceUpdateService;
+import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class AddClientScreen implements Screen {
+
+
+public class CustomerLoginScreen {
     public Screen doScreen(Scanner scanner, Application app) {
-        System.out.println("Please type in customer email");
+        System.out.println("Please enter your email and password");
         Screen screen = null;
         try {
             screen = doInput(scanner);
@@ -28,15 +32,22 @@ public class AddClientScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
+        System.out.println("Please enter email");
+        String email = scanner.next();
 
-        AddClientService addEmail = new AddClientService();
+        //check if password matches
 
-        //takes in email and creates a unique account
-        // adds to clientList
-        addEmail.createAccount(i);
+        System.out.println("Please enter password");
+        String password = scanner.next();
 
-        //after successfully adding account, confirms client has been added and send them back to LoginScreen
-        System.out.println("Account successfully added!");
-        return newScreen;
+        //
+
+        //if all is valid, send to CustomerHomeScreen
+
+
+        newScreen = new CustomerHomeScreen();
+
+
+
     }
 }
