@@ -12,7 +12,6 @@ public class AccountServices {
         return acct.getBalance();
     }
 
-
     public double withdrawal(Account acct, double balance, double amount) {
         double bal = acct.getBalance();
         if (bal < 0) {
@@ -27,7 +26,6 @@ public class AccountServices {
     public double viewBalance(Account acct) {
         return acct.getBalance();
     }
-
 }
 
 

@@ -8,11 +8,11 @@ public class UserDetailServices {
     private UserRepository dao;
 
     public UserDetailServices() {}
-
+    //set UserDao
     public void setDao(UserRepository dao) {
         this.dao = dao;
     }
-
+    //
     public Users getUserByEmail(String email, String password) {
 
         //email, password inputted from CustomerLoginScreen
