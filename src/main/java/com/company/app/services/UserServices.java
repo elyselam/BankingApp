@@ -39,7 +39,7 @@ public class UserServices {
 
     public static UserServices getInstance() {
         if (instance == null) {
-            instance = new com.company.app.services.AccountServices();
+            instance = new UserServices();
         }
         return instance;
     }

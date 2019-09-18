@@ -1,10 +1,11 @@
+import com.company.app.dao.DaoInterface;
 import com.company.app.models.Account;
 
 import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.HashMap;
 
-public class UsersDao {
+public class UsersDao implements DaoInterface {
     //protected AccountInfo user;
     public static final String file = "src/resources/data.txt";
     public static HashMap<String, Account> map = new HashMap();

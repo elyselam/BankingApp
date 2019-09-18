@@ -3,9 +3,10 @@ package com.company.app.dao;
 import com.company.app.models.Account;
 
 import java.io.*;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.HashMap;
 
-public class AccountDao {
+public class AccountDao implements DaoInterface{
 
     //output file
     public static final String filename = "src/resources/data.txt";
@@ -26,33 +27,47 @@ public class AccountDao {
         public void createAccount(String email) {
             Account newClient = new Account();
             //(email, Account{id, password, balance})
-            clientList.put(email, newClient);
-        }
-
-
-    }
-
-    //map
-    public void writeObject(String filename, Object map){
-        try(ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filename))){
-            output.writeObject(clientList);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            map.put(email, newClient);
         }
     }
 
-    public Object readObject(String filename){
-        try(ObjectInputStream input = new ObjectInputStream(new FileInputStream(filename))){
-            Object objInput = input.readObject();
-            input.close();
-            System.out.println("data been read");
-            return objInput;
-        } catch (Exception ex) {
-            ex.printStackTrace();
+
+    public UsersDao Read(String userName){
+        try {
+            ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
+            Object userInfo =  fileInput.readObject();
+            fileInput.close();
+            System.out.println("Have been Read");
+            //data.get(userName).getUserInfo();
+            return (Account) map.get(userName);
+        }
+        catch(FileAlreadyExistsException e){
+            e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
         }
         return null;
+    }
+
+    public void UsersDao Write(String userName, Account user){
+        try {
+            ObjectOutputStream fileOutput = new ObjectOutputStream(new FileOutputStream(file));
+            map.put(userName, user);
+            System.out.println("Have been Written");
+            fileOutput.writeObject(map);
+            fileOutput.close();
+
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 }

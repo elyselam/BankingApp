@@ -5,9 +5,8 @@ import java.security.SecureRandom;
 
 //Serialize Account for createAccountDao
 public class Account implements Serializable {
-
-
     private final int id;
+    private final String password;
     private double balance = 0;
 
     public Account() {

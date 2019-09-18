@@ -1,5 +1,4 @@
 package com.company.app.screens.customer;
-import com.company.app.dao.AccountDao;
 import com.company.app.services.BalanceUpdateService;
 
 import com.company.platform.Application;
@@ -32,7 +31,7 @@ public class DepositScreen implements Screen {
         String inputAmount = scanner.next();
 
         //key on email of local database stored in Dao
-        AccountDao currentUser = new AccountDao();
+        createAccountDao currentUser = new createAccountDao();
 
         //object = {email, {id, balance}}
         currentUser.AddClientService.clientList.get()
