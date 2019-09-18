@@ -7,31 +7,8 @@ import java.util.Map;
 public class AccountServices {
     private static AccountServices instance = null;
 
-    private Map<Integer, String> map = new HashMap<Integer, String>();
 
     private AccountServices() {
-    }
-
-    public static AccountServices getInstance() {
-        if (instance == null) {
-            instance = new AccountServices();
-        }
-        return instance;
-    }
-
-    //will use to return balance
-    //this.map.get(double balance).getBalance();
-    public Map<Integer, String> getMap() {
-        return map;
-    }
-
-    //will use to pull file to service
-    public void setMap(Map<Integer, String> map) {
-        this.map = map;
-    }
-
-    public void insertString(String string) {
-        this.map.put(1, string);
     }
 
     public double deposit(Account acct, double amount) {

@@ -1,18 +1,21 @@
 package com.company.app.models;
-
+import java.io.Serializable;
 //email, password
 //CustomerLoginScreen
 
 
-import java.io.Serializable;
-
 public class Users implements Serializable {
     private String email;
+    int accountID;
+
+    public Users(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     private String password;
 
-    public Users() {
 
-    }
     public String getEmail() {
         return email;
     }

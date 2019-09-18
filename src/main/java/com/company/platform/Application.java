@@ -16,25 +16,25 @@ public abstract class Application {
         this.title = title;
     }
 
-    private UserDao userDao = new UserDao();
-    private AccountDao accountDao = new AccountDao();
-
-    public UserDao getUsersDao() {
-        return userDao;
-    }
-
-    public void setUserDao(UserDao usersDao) {
-        this.userDao = userDao;
-    }
-
-    public AccountDao getAccountDao() {
-        return accountDao;
-    }
-
-    public void setAccountDao(AccountDao accountDao) {
-        this.accountDao = accountDao;
-    }
-
+//    private UserDao userDao = new UserDao();
+//    private AccountDao accountDao = new AccountDao();
+//
+//    public UserDao getUsersDao() {
+//        return userDao;
+//    }
+//
+//    public void setUserDao(UserDao usersDao) {
+//        this.userDao = userDao;
+//    }
+//
+//    public AccountDao getAccountDao() {
+//        return accountDao;
+//    }
+//
+//    public void setAccountDao(AccountDao accountDao) {
+//        this.accountDao = accountDao;
+//    }
+//
 
 
 }

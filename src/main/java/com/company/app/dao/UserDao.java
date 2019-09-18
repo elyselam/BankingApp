@@ -1,26 +1,29 @@
 import com.company.app.dao.DaoInterface;
 import com.company.app.models.Account;
+import com.company.app.models.Users;
 
 import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class UserDao implements DaoInterface {
     //protected AccountInfo user;
     public static final String file = "src/resources/data.txt";
-    public static HashMap<String, Account> map = new HashMap();
+    public HashMap<String, Users> map = new HashMap();
 
-    public static HashMap<String, Account> getData() {
+
+    public void getUserFromEmail(String email){
         return map;
     }
 
+    //constructor
     public UserDao() {
         try {
             ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
-            this.map =  (HashMap<String, Account>) fileInput.readObject();
+            this.map =  (HashMap<String, Users>) fileInput.readObject();
             fileInput.close();
             System.out.println("Have been Read");
-            //data.get(userName).getUserInfo();
 
         }
         catch(FileAlreadyExistsException e){
@@ -34,14 +37,15 @@ public class UserDao implements DaoInterface {
         }
     }
 
-    public Account Read(String userName){
+    //read from file
+    public Account Read(String email){
         try {
             ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
             Object userInfo =  fileInput.readObject();
             fileInput.close();
             System.out.println("Have been Read");
             //data.get(userName).getUserInfo();
-            return (Account) map.get(userName);
+            return (Account) map.get(email);
         }
         catch(FileAlreadyExistsException e){
             e.printStackTrace();
@@ -55,14 +59,15 @@ public class UserDao implements DaoInterface {
         return null;
     }
 
-    public void Write(String userName, Account user){
+    //write to file with email input and password
+    public void Write(String email, String password){
         try {
             ObjectOutputStream fileOutput = new ObjectOutputStream(new FileOutputStream(file));
-            map.put(userName, user);
+            Users user = new Users(email, password);
+            map.put(email, user);
             System.out.println("Have been Written");
             fileOutput.writeObject(map);
             fileOutput.close();
-
         }
         catch(FileNotFoundException e){
             e.printStackTrace();

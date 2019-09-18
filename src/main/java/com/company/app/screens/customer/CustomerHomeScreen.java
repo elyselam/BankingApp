@@ -1,6 +1,8 @@
 package com.company.app.screens.customer;
 
+import com.company.app.dao.AccountDao;
 import com.company.app.services.AccountService;
+import com.company.app.services.AccountServices;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -41,7 +43,8 @@ public class CustomerHomeScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
-        AccountService bal = new AccountService();
+        AccountServices bal = new AccountServices();
+        AccountDao accountDao = new AccountDao();
 
         //deposit
         //intake amount,
@@ -55,11 +58,12 @@ public class CustomerHomeScreen implements Screen {
 
         //viewBalance
         } else if (i.equals("3")) {
-        return bal.viewBalance();
+        return accountDao.getBalance();
 
         //exit and returns to LoginScreen
         } else if (i.equals("4")) {
             newScreen = new CustomerHomeScreen;
 
     }
+        return newScreen;
 }

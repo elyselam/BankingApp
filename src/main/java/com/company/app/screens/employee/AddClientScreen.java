@@ -1,5 +1,6 @@
 package com.company.app.screens.employee;
 
+import com.company.app.services.AccountServices;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -29,7 +30,7 @@ public class AddClientScreen implements Screen {
         String i = scanner.next();
         Screen newScreen = null;
 
-        AddClientService addEmail = new AddClientService();
+        AccountServices addEmail = new AccountServices();
 
         //takes in email and creates a unique account
         // adds to clientList

@@ -1,5 +1,7 @@
 package com.company.app.screens.customer;
 
+import com.company.app.models.Users;
+import com.company.app.services.UserServices;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -30,17 +32,20 @@ public class CustomerLoginScreen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
+
         System.out.println("Please enter email");
         String email = scanner.next();
 
-        //check if password matches
+
 
         System.out.println("Please enter password");
         String password = scanner.next();
 
-        //
+        new UserServices(email, password);
 
         //if all is valid, send to CustomerHomeScreen
+
+
 
 
         newScreen = new CustomerHomeScreen();

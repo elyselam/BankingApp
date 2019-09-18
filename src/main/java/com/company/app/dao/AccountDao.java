@@ -9,27 +9,29 @@ import java.util.HashMap;
 public class AccountDao implements DaoInterface{
 
     //output file
-    public static final String filename = "src/resources/data.txt";
+    public static final String file = "src/resources/data.txt";
     //object
-    public static HashMap<String, Account> map = new HashMap<>();
-
-    //get data from local storage HashMap
-    public static HashMap<String, Account> getData() {
-        return map;
-    }
+    public HashMap<Integer, Account> map = new HashMap<>();
 
 
-    public void AddClientServiceToDatabase {
-
+    public void AccountDao {
         //object = {email, {id, password, balance}}
-        HashMap<String, Account> map = new HashMap();
 
-        public void createAccount(String email) {
-            Account newClient = new Account();
-            //(email, Account{id, password, balance})
-            map.put(email, newClient);
+        public void AccountDao() {
+            Account newAccount = new Account();
+            //(Account{id, password, balance})
+            map.put( , newAccount);
         }
     }
+
+
+
+
+
+
+
+
+
 
 
     public UsersDao Read(String userName){
@@ -38,7 +40,7 @@ public class AccountDao implements DaoInterface{
             Object userInfo =  fileInput.readObject();
             fileInput.close();
             System.out.println("Have been Read");
-            //data.get(userName).getUserInfo();
+
             return (Account) map.get(userName);
         }
         catch(FileAlreadyExistsException e){

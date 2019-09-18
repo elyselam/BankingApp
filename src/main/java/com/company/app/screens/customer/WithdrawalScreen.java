@@ -1,6 +1,7 @@
 package com.company.app.screens.customer;
 import com.company.app.services.AccountService;
 
+import com.company.app.services.AccountServices;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -30,16 +31,17 @@ public class WithdrawalScreen implements Screen {
 
 
     public Screen doInput(Scanner scanner) throws Exception {
-        String inputAmount = scanner.next();
-
-        AccountService bal = new AccountService();
+        Double inputAmount = scanner.next();
+        Screen newScreen = null;
+        AccountServices bal = new AccountServices();
 
         //withdraw
         //intake amount from scanner
         //confirms intake with new balance
 
-        System.out.println("You withdrew successfully! Your remaining amount is: " );
-        return new CustomerHomeScreen();
+        System.out.println("You withdrew successfully! Your remaining amount is: " + bal.viewBalance());
+
+        return newScreen;
 
 
     }

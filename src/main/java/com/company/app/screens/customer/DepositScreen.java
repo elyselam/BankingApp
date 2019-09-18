@@ -1,6 +1,8 @@
 package com.company.app.screens.customer;
+import com.company.app.dao.AccountDao;
 import com.company.app.services.AccountService;
 
+import com.company.app.services.AccountServices;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -31,20 +33,17 @@ public class DepositScreen implements Screen {
         String inputAmount = scanner.next();
 
         //key on email of local database stored in Dao
-        createAccountDao currentUser = new createAccountDao();
+        AccountServices customerDeposit = new AccountServices();
 
         //object = {email, {id, balance}}
-        currentUser.AddClientService.clientList.get()
-
-
-        AccountService bal = new AccountService();
 
         //deposit
         //intake amount from scanner
         //confirms intake with new balances
-       bal.deposit(currentUser, inputAmount);
+        customerDeposit.deposit(inputAmount);
 
-        System.out.println("Deposit completed. Your remaining amount is: " + bal.getAmount());
+        AccountDao dao = new AccountDao();
+        System.out.println("Deposit completed. Your remaining amount is: " + dao.getBalance());
 
 
        return new CustomerHomeScreen();

@@ -1,6 +1,7 @@
 package com.company.app.screens.employee;
 
 import com.company.app.screens.WelcomeScreen;
+import com.company.app.services.AccountServices;
 import com.company.app.services.AddClientService;
 import com.company.app.services.AccountService;
 import com.company.app.system.StringMenuBuilder;
@@ -43,7 +44,7 @@ public class EmployeeScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
-        AccountService bal = new AccountService();
+        AccountServices bal = new AccountServices();
 
 
         if (i.equals("1")){
