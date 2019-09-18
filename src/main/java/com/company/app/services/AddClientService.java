@@ -1,4 +1,4 @@
-//package com.company.app.services;
+package com.company.app.services;
 //
 //
 //
@@ -29,3 +29,38 @@
 //
 //}
 //
+
+
+import java.util.HashMap;
+import java.util.Map;
+public class AddClientService {
+    private static AddClientService instance = null;
+
+    private Map<Integer, String> map = new HashMap<Integer, String>();
+
+    private AddClientService() {
+    }
+
+    public static AddClientService getInstance() {
+        if(instance == null) {
+            instance = new AddClientService();
+        }
+        return instance;
+    }
+
+    public Map<Integer, String> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<Integer, String> map) {
+        this.map = map;
+    }
+
+    public void insertString(String string) {
+        this.map.put(1, string);
+    }
+
+}
+
+
+

@@ -10,8 +10,12 @@ public class createAccountDao {
     //output file
     public static final String filename = "src/resources/data.txt";
     //object
-    private static HashMap<String, Account> clientList = new HashMap<>();
+    public static HashMap<String, Account> clientList = new HashMap<>();
 
+    //get data from local storage HashMap
+    public static HashMap<String, Account> getData() {
+        return clientList;
+    }
 
 
     public void AddClientServiceToDatabase {
@@ -43,6 +47,7 @@ public class createAccountDao {
         try(ObjectInputStream input = new ObjectInputStream(new FileInputStream(filename))){
             Object objInput = input.readObject();
             input.close();
+            System.out.println("data been read");
             return objInput;
         } catch (Exception ex) {
             ex.printStackTrace();
