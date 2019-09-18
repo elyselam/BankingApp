@@ -5,23 +5,23 @@ import com.company.app.models.Account;
 import java.io.*;
 import java.util.HashMap;
 
-public class createAccountDao {
+public class AccountDao {
 
     //output file
     public static final String filename = "src/resources/data.txt";
     //object
-    public static HashMap<String, Account> clientList = new HashMap<>();
+    public static HashMap<String, Account> map = new HashMap<>();
 
     //get data from local storage HashMap
     public static HashMap<String, Account> getData() {
-        return clientList;
+        return map;
     }
 
 
     public void AddClientServiceToDatabase {
 
         //object = {email, {id, password, balance}}
-        HashMap<String, Account> clientList = new HashMap();
+        HashMap<String, Account> map = new HashMap();
 
         public void createAccount(String email) {
             Account newClient = new Account();
@@ -32,8 +32,8 @@ public class createAccountDao {
 
     }
 
-    //clientList
-    public void writeObject(String filename, Object clientList){
+    //map
+    public void writeObject(String filename, Object map){
         try(ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filename))){
             output.writeObject(clientList);
         } catch (FileNotFoundException e) {
