@@ -1,6 +1,9 @@
 package com.company.app.screens.customer;
 
+import com.company.app.models.Users;
+import com.company.app.services.UserAuthenticateServices;
 import com.company.app.services.UserDetailServices;
+import com.company.app.system.BankApplication;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -9,8 +12,10 @@ import java.util.Scanner;
 
 
 
-public class CustomerLoginScreen {
+public class CustomerLoginScreen implements Screen{
+    private UserAuthenticateServices authService;
     public Screen doScreen(Scanner scanner, Application app) {
+        authService = (UserAuthenticateServices)((BankApplication)app).getContext().get("userAuthService");
         System.out.println("Please enter your email and password");
         Screen screen = null;
         try {
@@ -40,16 +45,15 @@ public class CustomerLoginScreen {
         System.out.println("Please enter password");
         String password = scanner.next();
 
-        new UserDetailServices(email, password);
+        Users u = authService.auth(email, password);
 
-        //if all is valid, send to CustomerHomeScreen
+        if(u == null) {
+            // login failed
+            return new CustomerLoginScreen();
+        }
 
-
-
-
-        newScreen = new CustomerHomeScreen();
-
-
+        //login successful
+        return new CustomerHomeScreen();
 
     }
 }

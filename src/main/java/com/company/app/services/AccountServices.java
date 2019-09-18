@@ -3,9 +3,8 @@ import com.company.app.models.Account;
 
 
 public class AccountServices {
-    private static AccountServices instance = null;
 
-    private AccountServices() {
+    public AccountServices() {
     }
 
     public double deposit(Account acct, double amount) {

@@ -1,14 +1,21 @@
 package com.company.app.system;
 
+import com.company.app.dao.*;
+import com.company.app.models.Users;
 import com.company.app.screens.WelcomeScreen;
+import com.company.app.services.UserAuthenticateServices;
+import com.company.app.services.UserDetailServices;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BankApplication extends Application {
     private Screen currentScreen;
     private Scanner scanner;
+    Map<String, Object> context = new HashMap<>();
 
     public BankApplication() {
         currentScreen = new WelcomeScreen();
@@ -19,6 +26,8 @@ public class BankApplication extends Application {
     @Override
     public void run(String[] args) {
 
+        initContext();
+
         while(currentScreen != null) {
             //invokes doScreen on currentScreen
             //this is the current instance of BookstoreApplication, and it's 'app'
@@ -27,6 +36,28 @@ public class BankApplication extends Application {
             //implicit upcast from BookstoreApplication to Application
             currentScreen = currentScreen.doScreen(scanner, this);
         }
+    }
+
+    public Map<String, Object> getContext() { return context; }
+
+    private void initContext() {
+        //create instances of all of your services
+        //and daos and resolve their relations ships
+        // Service s = new Service1()
+        // Dao d = new Dao1()
+        // s.setDao(d);
+        // context.put("myService", s);
+        Repository<Users> userDao = new UserJDBCDao();
+
+        UserDetailServices userDeets = new UserDetailServices();
+        userDeets.setDao((UserRepository)userDao);
+
+        UserAuthenticateServices userAuth = new UserAuthenticateServices();
+        userAuth.setUserDetailServices(userDeets);
+
+
+        context.put("userDetailService", userDeets);
+        context.put("userAuthService", userAuth);
     }
 
 }
