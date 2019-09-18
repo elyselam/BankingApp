@@ -1,7 +1,6 @@
 package com.company.app.screens.customer;
 
-import com.company.app.models.Users;
-import com.company.app.services.UserServices;
+import com.company.app.services.UserDetailServices;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -41,7 +40,7 @@ public class CustomerLoginScreen {
         System.out.println("Please enter password");
         String password = scanner.next();
 
-        new UserServices(email, password);
+        new UserDetailServices(email, password);
 
         //if all is valid, send to CustomerHomeScreen
 

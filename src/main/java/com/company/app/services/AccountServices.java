@@ -1,12 +1,9 @@
 package com.company.app.services;
 import com.company.app.models.Account;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class AccountServices {
     private static AccountServices instance = null;
-
 
     private AccountServices() {
     }

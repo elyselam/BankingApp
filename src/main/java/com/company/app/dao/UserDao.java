@@ -10,32 +10,19 @@ import java.util.Scanner;
 public class UserDao implements DaoInterface {
     //protected AccountInfo user;
     public static final String file = "src/resources/data.txt";
+
+    //constructor
     public HashMap<String, Users> map = new HashMap();
 
-
-    public void getUserFromEmail(String email){
+    public void getData(String email){
         return map;
     }
 
-    //constructor
-    public UserDao() {
-        try {
-            ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
-            this.map =  (HashMap<String, Users>) fileInput.readObject();
-            fileInput.close();
-            System.out.println("Have been Read");
-
-        }
-        catch(FileAlreadyExistsException e){
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+    public void setData(String email) {
+        //set password to email
     }
+
+
 
     //read from file
     public Account Read(String email){

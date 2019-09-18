@@ -25,15 +25,6 @@ public class AccountDao implements DaoInterface{
     }
 
 
-
-
-
-
-
-
-
-
-
     public UsersDao Read(String userName){
         try {
             ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
