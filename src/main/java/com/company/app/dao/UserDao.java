@@ -5,7 +5,7 @@ import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.HashMap;
 
-public class UsersDao implements DaoInterface {
+public class UserDao implements DaoInterface {
     //protected AccountInfo user;
     public static final String file = "src/resources/data.txt";
     public static HashMap<String, Account> map = new HashMap();
@@ -14,7 +14,7 @@ public class UsersDao implements DaoInterface {
         return map;
     }
 
-    public UsersDao() {
+    public UserDao() {
         try {
             ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
             this.map =  (HashMap<String, Account>) fileInput.readObject();
