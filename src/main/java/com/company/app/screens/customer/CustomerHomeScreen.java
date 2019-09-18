@@ -1,6 +1,6 @@
 package com.company.app.screens.customer;
 
-import com.company.app.services.BalanceUpdateService;
+import com.company.app.services.AccountService;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -41,7 +41,7 @@ public class CustomerHomeScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
-        BalanceUpdateService bal = new BalanceUpdateService();
+        AccountService bal = new AccountService();
 
         //deposit
         //intake amount,

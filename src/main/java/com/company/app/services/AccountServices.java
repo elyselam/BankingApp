@@ -32,14 +32,13 @@ package com.company.app.services;
 
 
 import com.company.app.models.Account;
-import com.company.app.models.Users;
 
 import java.util.HashMap;
 import java.util.Map;
 public class AccountServices {
     private static AccountServices instance = null;
 
-    private Map<String, Account> map = new HashMap<>();
+    private Map<Integer, String> map = new HashMap<Integer, String>();
 
     private AccountServices() {
     }
@@ -65,8 +64,6 @@ public class AccountServices {
     public void insertString(String string) {
         this.map.put(1, string);
     }
-
-
 
     public double deposit(Account acct, double amount) {
         acct.setBalance(acct.getBalance() + amount);

@@ -1,5 +1,5 @@
 package com.company.app.screens.customer;
-import com.company.app.services.BalanceUpdateService;
+import com.company.app.services.AccountService;
 
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -37,7 +37,7 @@ public class DepositScreen implements Screen {
         currentUser.AddClientService.clientList.get()
 
 
-        BalanceUpdateService bal = new BalanceUpdateService();
+        AccountService bal = new AccountService();
 
         //deposit
         //intake amount from scanner

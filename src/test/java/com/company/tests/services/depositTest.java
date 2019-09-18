@@ -1,7 +1,7 @@
 package com.company.tests.services;
 
 import com.company.app.models.Account;
-import com.company.app.services.BalanceUpdateService;
+import com.company.app.services.AccountService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,11 +10,11 @@ public class depositTest {
 
     Account account = new Account();
 
-    BalanceUpdateService balance;
+    AccountService balance;
 
     @Before
     public void init() {
-        balance = new BalanceUpdateService();
+        balance = new AccountService();
     }
 
     @Test

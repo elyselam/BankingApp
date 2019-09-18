@@ -1,7 +1,5 @@
 package com.company.app.screens.customer;
 
-import com.company.app.services.BalanceUpdateService;
-import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 

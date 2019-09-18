@@ -1,5 +1,5 @@
 package com.company.app.screens.customer;
-import com.company.app.services.BalanceUpdateService;
+import com.company.app.services.AccountService;
 
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -32,7 +32,7 @@ public class WithdrawalScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String inputAmount = scanner.next();
 
-        BalanceUpdateService bal = new BalanceUpdateService();
+        AccountService bal = new AccountService();
 
         //withdraw
         //intake amount from scanner

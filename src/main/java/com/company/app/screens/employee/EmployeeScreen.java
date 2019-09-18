@@ -2,7 +2,7 @@ package com.company.app.screens.employee;
 
 import com.company.app.screens.WelcomeScreen;
 import com.company.app.services.AddClientService;
-import com.company.app.services.BalanceUpdateService;
+import com.company.app.services.AccountService;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -43,7 +43,7 @@ public class EmployeeScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String i = scanner.next();
         Screen newScreen = null;
-        BalanceUpdateService bal = new BalanceUpdateService();
+        AccountService bal = new AccountService();
 
 
         if (i.equals("1")){
