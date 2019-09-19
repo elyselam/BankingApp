@@ -1,8 +1,10 @@
 package com.company.app.screens.customer;
 
+import com.company.app.dao.AccountDao;
+import com.company.app.dao.UserDao;
+import com.company.app.models.Account;
 import com.company.app.models.Users;
-import com.company.app.services.UserAuthenticateServices;
-import com.company.app.services.UserDetailServices;
+import com.company.app.services.CustomerLoginService;
 import com.company.app.system.BankApplication;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -10,16 +12,22 @@ import com.company.platform.Screen;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
-
 public class CustomerLoginScreen implements Screen{
-    private UserAuthenticateServices authService;
+
+    private UserDao userDao;
+    private AccountDao accountDao;
+
+
     public Screen doScreen(Scanner scanner, Application app) {
-        authService = (UserAuthenticateServices)((BankApplication)app).getContext().get("userAuthService");
-        System.out.println("Please enter your email and password");
+        userDao = app.getUserDao();
+        accountDao = app.getAccountDao();
+
+        System.out.println("Please enter your email");
+
         Screen screen = null;
+
         try {
-            screen = doInput(scanner);
+            screen = doInput(scanner, app);
         }catch(InputMismatchException ex) {
             System.out.println("Input Mismatch");
             scanner.next();
@@ -33,27 +41,10 @@ public class CustomerLoginScreen implements Screen{
     }
 
 
-    public Screen doInput(Scanner scanner) throws Exception {
-        String i = scanner.next();
-        Screen newScreen = null;
-
-        System.out.println("Please enter email");
+    public Screen doInput(Scanner scanner,Application app) throws Exception {
         String email = scanner.next();
-
-
-
-        System.out.println("Please enter password");
+        System.out.println("Please enter your password");
         String password = scanner.next();
-
-        Users u = authService.auth(email, password);
-
-        if(u == null) {
-            // login failed
-            return new CustomerLoginScreen();
-        }
-
-        //login successful
-        return new CustomerHomeScreen();
-
+        return (new CustomerLoginService()).login(email, password, app);
     }
 }

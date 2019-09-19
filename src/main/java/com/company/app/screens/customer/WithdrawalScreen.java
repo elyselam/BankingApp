@@ -1,7 +1,6 @@
 package com.company.app.screens.customer;
 import com.company.app.services.AccountService;
 
-import com.company.app.services.AccountServices;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 

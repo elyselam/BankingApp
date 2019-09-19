@@ -1,0 +1,15 @@
+
+Nsquid:S1481""0Remove this unused "inputAmount" local variable.(Õ× º8À±ÌûÓ-
+V
+squid:S106*"9Replace this use of System.out or System.err by a logger.(İ…¦µ8¼ÓŸûÓ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8Êœ›ûÓ-
+gsquid:S2147"DCombine this catch with the one at line 23, which has the same body.(±Ÿ—±ÿÿÿÿÿ8Êœ›ûÓ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ç›à‚8Êœ›ûÓ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8Êœ›ûÓ-
+tsquid:UselessImportCheck"DRemove this unused import 'com.company.app.services.AccountService'.(áÄ±Ÿÿÿÿÿÿ8¡Ÿı£Ô-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8Êœ›ûÓ-
+]squid:S1854""?Remove this useless assignment to local variable "inputAmount".(Õ× º8À±ÌûÓ-

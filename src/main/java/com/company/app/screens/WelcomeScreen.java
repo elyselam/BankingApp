@@ -1,6 +1,7 @@
 package com.company.app.screens;
 
 import com.company.app.screens.customer.CustomerHomeScreen;
+import com.company.app.screens.customer.CustomerLoginScreen;
 import com.company.app.screens.employee.EmployeeScreen;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
@@ -21,7 +22,7 @@ public class WelcomeScreen implements Screen {
         System.out.println(menuText);
         Screen screen = null;
         try {
-            screen = doInput(scanner);
+            screen = doInput(scanner, app);
 //            System.out.println(screen.doInput());
         }catch(InputMismatchException ex) {
             System.out.println("Input Mismatch");
@@ -40,17 +41,17 @@ public class WelcomeScreen implements Screen {
     }
 
 
-    public Screen doInput(Scanner scanner) throws Exception {
+    public Screen doInput(Scanner scanner,Application app) throws Exception {
         String i = scanner.next();
-        Screen newScreen = null;
+        Screen newScreen = new WelcomeScreen();
 
         //if input is "customer"
         if (i.equals("1")){
-            newScreen =  new CustomerHomeScreen();
+            newScreen =  new CustomerLoginScreen();
 
             //if input is "employee"
         } else if (i.equals("2")) {
-            newScreen = new EmployeeScreen();
+            //TODO newScreen = new EmployeeScreen();
 
         }
         return newScreen;

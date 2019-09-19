@@ -6,30 +6,21 @@ import java.io.Serializable;
 
 public class Users implements Serializable {
     private String email;
-    int accountID;
+    private final int accountID;
+    private int password;
 
-    public Users(String email, String password) {
+    public Users(String email, String password, int accountID) {
         this.email = email;
-        this.password = password;
+        this.password = password.hashCode();
+        this.accountID = accountID;
     }
-
-    private String password;
-
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
+    public int getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
 

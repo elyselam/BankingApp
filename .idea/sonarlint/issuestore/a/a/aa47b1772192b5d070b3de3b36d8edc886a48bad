@@ -1,17 +1,16 @@
 
-ksquid:UselessImportCheck"@Remove this unused import 'com.company.app.screens.LoginScreen'.(±β—Ί8¶’Σ-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(Εκ–¨8¶μ…Σ-
-Zsquid:S1854."7Remove this useless assignment to local variable "bal".(°Λ΅Εόÿÿÿÿ8¶’Σ-
-Qsquid:S1481-".Remove this unused "newScreen" local variable.(­θÿοϋÿÿÿÿ8¶’Σ-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.( “‘ν8¶μ…Σ-
-gsquid:S2147$"DCombine this catch with the one at line 32, which has the same body.(±—±ÿÿÿÿÿ8¶μ…Σ-
-V
-squid:S106%"9Replace this use of System.out or System.err by a logger.(φ¬8¶μ…Σ-
-V
-squid:S106""9Replace this use of System.out or System.err by a logger.(φ¬8¶μ…Σ-
-Ksquid:S1481."(Remove this unused "bal" local variable.(°Λ΅Εόÿÿÿÿ8¶’Σ-
 U
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ί–k8¶μ…Σ-
-Hsquid:S001080")Either remove or fill this block of code.(ωΒκ8ής†•Σ-
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ί–k8¶μ…Σ-
+Ksquid:S1481/"(Remove this unused "bal" local variable.(¤€υχόÿÿÿÿ8¶’Σ-
+isquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(›‡Μ8«π―µΣ-
+gsquid:S2147%"DCombine this catch with the one at line 34, which has the same body.(±—±ÿÿÿÿÿ8¶μ…Σ-
+tsquid:UselessImportCheck"DRemove this unused import 'com.company.app.services.AccountService'.(αΔ±ÿÿÿÿÿ8Λή£Τ-
+V
+squid:S106#"9Replace this use of System.out or System.err by a logger.(φ¬8¶μ…Σ-
+V
+squid:S106&"9Replace this use of System.out or System.err by a logger.(φ¬8¶μ…Σ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(Εκ–¨8¶μ…Σ-
+Zsquid:S1854/"7Remove this useless assignment to local variable "bal".(¤€υχόÿÿÿÿ8¶’Σ-
+V
+squid:S106 "9Replace this use of System.out or System.err by a logger.( “‘ν8¶μ…Σ-

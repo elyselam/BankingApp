@@ -1,36 +1,68 @@
 package com.company.app.dao;
 
+import com.company.app.models.Account;
 import com.company.app.models.Users;
 
+import java.io.*;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.Collection;
 
 
 public class AccountDao implements UserRepository{
 
+
     @Override
-    public Users getByEmail(String email) {
-        return null;
+    public Users write(Users o) {
+        try {
+        ObjectOutputStream fileOutput = new ObjectOutputStream(new FileOutputStream(file));
+        map.put(userName, user);
+        System.out.println("Have been Written");
+        fileOutput.writeObject(map);
+        fileOutput.close();
+
+        }
+        catch(FileNotFoundException e){
+        e.printStackTrace();
+        }
+        catch(IOException e){
+        e.printStackTrace();
+        }
+        }
     }
 
     @Override
-    public Users save(Users o) {
+    public Users read(Users o) {
+        try {
+        ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
+        Object userInfo =  fileInput.readObject();
+        fileInput.close();
+        System.out.println("Have been Read");
 
+        return (Account) map.get(userName);
+        }
+        catch(FileAlreadyExistsException e){
+        e.printStackTrace();
+        }
+        catch(ClassNotFoundException e){
+        e.printStackTrace();
+        }
+        catch(Exception e) {
+        e.printStackTrace();
+        }
         return null;
+        }
     }
+}
 
     @Override
     public Users getById(int id) {
         return null;
     }
 
+
     @Override
-    public Collection<Users> getAll() {
+    public Users getByEmail(String email) {
         return null;
-    }
-
-    @Override
-    public void delete(Users o) {
-
     }
 }
 

@@ -1,7 +1,0 @@
-
-rsquid:S00116"SRename this field "LoggedIn" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô”ß8é°×®Ò-
-Ksquid:S1068"-Remove this unused "firstName" private field.(š„¦¿8é°×®Ò-
-Osquid:S1068",Remove this unused "lastName" private field.(ºàÑïúÿÿÿÿ8é°×®Ò-
-Lsquid:S1068")Remove this unused "email" private field.(ª«Õìùÿÿÿÿ8é°×®Ò-
-Osquid:S1068",Remove this unused "password" private field.(œãë­úÿÿÿÿ8é°×®Ò-
-Jsquid:S1068",Remove this unused "LoggedIn" private field.(ô”ß8é°×®Ò-

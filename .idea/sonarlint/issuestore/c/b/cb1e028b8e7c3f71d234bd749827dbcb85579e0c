@@ -1,0 +1,18 @@
+
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(êù™ˆøÿÿÿÿ8ì¬ÊÔ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8ì¬ÊÔ-
+xsquid:UselessImportCheck"HRemove this unused import 'com.company.app.services.UserDetailServices'.(áÆü¡ÿÿÿÿÿ8î‘ÊªÔ-
+Qsquid:S1481)".Remove this unused "newScreen" local variable.(­èÿïûÿÿÿÿ8ì¬ÊÔ-
+Rsquid:S1854("5Remove this useless assignment to local variable "i".(ÙÃœ8ì¬ÊÔ-
+V
+squid:S106+"9Replace this use of System.out or System.err by a logger.(’ÛíÙ8¹¿ñÔ-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8ì¬ÊÔ-
+[
+squid:S1060"9Replace this use of System.out or System.err by a logger.(×ôù…ûÿÿÿÿ8¹¿ñÔ-
+Csquid:S1481("&Remove this unused "i" local variable.(ÙÃœ8ì¬ÊÔ-
+gsquid:S2147 "DCombine this catch with the one at line 29, which has the same body.(±Ÿ—±ÿÿÿÿÿ8ì¬ÊÔ-
+V
+squid:S106!"9Replace this use of System.out or System.err by a logger.(ö¬8ì¬ÊÔ-

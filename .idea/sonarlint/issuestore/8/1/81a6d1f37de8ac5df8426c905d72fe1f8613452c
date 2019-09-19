@@ -1,0 +1,18 @@
+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(•žƒ¶8ŒÏ€«Ô-
+ssquid:S2095"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(˜¹½Œÿÿÿÿÿ8„ÞÉ¸Ô-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8„ÞÉ¸Ô-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8ŒÏ€«Ô-
+gsquid:S2147 "DCombine this catch with the one at line 29, which has the same body.(©œ¡ÿÿÿÿÿ8„ÞÉ¸Ô-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×øÌß8ŒÏ€«Ô-
+Fsquid:S1148!"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8„ÞÉ¸Ô-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÿÒÐ˜ùÿÿÿÿ8ŒÏ€«Ô-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ì«ú‰ûÿÿÿÿ8ŒÏ€«Ô-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(æ¬×è8Ûî«Ô-
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(©¹Êóÿÿÿÿÿ8„ÞÉ¸Ô-
+asquid:UselessImportCheck"1Remove this unused import 'java.util.Collection'.(¹ÉÐšùÿÿÿÿ8Ùø¿¸Ô-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ò´âŒüÿÿÿÿ8ŒÏ€«Ô-
+^squid:UselessImportCheck
+".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ª¼Ô¤Ô-
+nsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8®ÌÊ¸Ô-

@@ -1,8 +1,9 @@
 package com.company.app.screens.customer;
 
 import com.company.app.dao.AccountDao;
+import com.company.app.dao.UserDao;
+import com.company.app.models.Account;
 import com.company.app.services.AccountService;
-import com.company.app.services.AccountServices;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -12,7 +13,14 @@ import java.util.Scanner;
 
 public class CustomerHomeScreen implements Screen {
 
+    UserDao userDao;
+    AccountDao accountDao;
+
     public Screen doScreen(Scanner scanner, Application app) {
+        userDao = app.getUserDao();
+        accountDao = app.getAccountDao();
+
+
         System.out.println("Welcome back! How can we help you today?");
         String menuText = "";
         menuText = new StringMenuBuilder()
@@ -26,7 +34,7 @@ public class CustomerHomeScreen implements Screen {
 
         Screen screen = null;
         try {
-            screen = doInput(scanner);
+            screen = doInput(scanner, app);
         }catch(InputMismatchException ex) {
             System.out.println("Input Mismatch");
             scanner.next();
@@ -40,30 +48,23 @@ public class CustomerHomeScreen implements Screen {
     }
 
 
-    public Screen doInput(Scanner scanner) throws Exception {
-        String i = scanner.next();
+    public Screen doInput(Scanner scanner, Application app) throws Exception {
         Screen newScreen = null;
-        AccountServices bal = new AccountServices();
-        AccountDao accountDao = new AccountDao();
+        String input = scanner.next();
 
-        //deposit
-        //intake amount,
-        //confirms intake with new balance
-        if (i.equals("1")){
-            return bal.deposit();
+        if (input.equals("1")) {
+            newScreen = new DepositScreen();
 
-        //withdraw
-        } else if (i.equals("2")) {
-            return bal.withdrawal();
-
-        //viewBalance
-        } else if (i.equals("3")) {
-        return accountDao.getBalance();
-
-        //exit and returns to LoginScreen
-        } else if (i.equals("4")) {
-            newScreen = new CustomerHomeScreen;
+        } else if (input.equals("2")) {
+            newScreen = new WithdrawalScreen();
+            
+        } else if (input.equals("3")) {
+            newScreen = new ViewBalanceScreen();
+        }
+        System.out.println("goodbye!");
+        newScreen = new CustomerLoginScreen();
+        return newScreen;
 
     }
-        return newScreen;
+
 }
