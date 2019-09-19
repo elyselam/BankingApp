@@ -31,21 +31,6 @@ public class DepositScreen implements Screen {
     public Screen doInput(Scanner scanner) throws Exception {
         String inputAmount = scanner.next();
 
-        //key on email of local database stored in Dao
-        AccountServices customerDeposit = new AccountServices();
-
-        //object = {email, {id, balance}}
-
-        //deposit
-        //intake amount from scanner
-        //confirms intake with new balances
-        customerDeposit.deposit(inputAmount);
-
-        AccountDao dao = new AccountDao();
-        System.out.println("Deposit completed. Your remaining amount is: " + dao.getBalance());
-
-
-       return new CustomerHomeScreen();
 
     }
 }

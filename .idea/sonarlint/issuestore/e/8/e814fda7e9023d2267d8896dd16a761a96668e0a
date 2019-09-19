@@ -1,6 +1,0 @@
-
-Osquid:S1172",Remove this unused method parameter "email".(”»¯“øÿÿÿÿ8‚ÙÁªÔ-
-usquid:S1450
-"RRemove the "dao" field and declare it as a local variable in the relevant methods.(·¼‚Ÿûÿÿÿÿ8‚ÙÁªÔ-
-Ÿsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(éö8½±¤ªÔ-
-isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¥šğç8”ì´¨Ô-

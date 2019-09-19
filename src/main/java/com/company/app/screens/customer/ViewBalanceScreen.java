@@ -2,17 +2,12 @@ package com.company.app.screens.customer;
 
 import com.company.app.dao.AccountDao;
 import com.company.app.dao.UserDao;
-import com.company.app.models.Account;
-import com.company.app.screens.WelcomeScreen;
-import com.company.app.services.AccountService;
 import com.company.app.system.StringMenuBuilder;
-import com.company.platform.Application;
 import com.company.platform.Screen;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
-public class CustomerHomeScreen implements Screen {
+public class ViewBalanceScreen {
 
     UserDao userDao;
     AccountDao accountDao;
@@ -21,16 +16,9 @@ public class CustomerHomeScreen implements Screen {
         userDao = app.getUserDao();
         accountDao = app.getAccountDao();
 
-        System.out.println("Welcome back! How can we help you today?");
-        String menuText = "";
-        menuText = new StringMenuBuilder()
-                .addOption("1", "Deposit")
-                .addOption("2", "Withdraw")
-                .addOption("3", "View Balance")
-                .addOption("4", "Logout")
-                .build();
 
-        System.out.println(menuText);
+        System.out.println("Welcome back! How can we help you today?");
+
 
         Screen screen = null;
         try {
@@ -54,21 +42,19 @@ public class CustomerHomeScreen implements Screen {
 
         if (input.equals("1")) {
             newScreen = new DepositScreen();
+
         } else if (input.equals("2")) {
             newScreen = new WithdrawalScreen();
+
         } else if (input.equals("3")) {
-           // newScreen = new ViewBalanceScreen();
-
-        } else if(input.equals("4") ) {
-            newScreen = new WelcomeScreen();
-            //log them out, reset current account
-            app.setCurrentAccount(null);
-            app.setCurrentUser(null);
-
-        //if something random, back to 'welcome back!'
-        } else {
-            newScreen = new CustomerHomeScreen();
+            newScreen = new ViewBalanceScreen();
         }
+        System.out.println("goodbye!");
+        newScreen = new CustomerLoginScreen();
         return newScreen;
+
     }
+
+}
+
 }

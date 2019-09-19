@@ -1,18 +1,19 @@
 
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(êù™ˆøÿÿÿÿ8ì¬ÊÔ-
+ssquid:UselessImportCheck"CRemove this unused import 'com.company.app.system.BankApplication'.(ªìêôùÿÿÿÿ8¼áÛ»Ô-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8ì¬ÊÔ-
-xsquid:UselessImportCheck"HRemove this unused import 'com.company.app.services.UserDetailServices'.(áÆü¡ÿÿÿÿÿ8î‘ÊªÔ-
-Qsquid:S1481)".Remove this unused "newScreen" local variable.(­èÿïûÿÿÿÿ8ì¬ÊÔ-
-Rsquid:S1854("5Remove this useless assignment to local variable "i".(ÙÃœ8ì¬ÊÔ-
+squid:S106"9Replace this use of System.out or System.err by a logger.(“Ö¢‰8›åå»Ô-
 V
-squid:S106+"9Replace this use of System.out or System.err by a logger.(’ÛíÙ8¹¿ñÔ-
+squid:S106#"9Replace this use of System.out or System.err by a logger.(ö¬8ì¬ÊÔ-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8ì¬ÊÔ-
-[
-squid:S1060"9Replace this use of System.out or System.err by a logger.(×ôù…ûÿÿÿÿ8¹¿ñÔ-
-Csquid:S1481("&Remove this unused "i" local variable.(ÙÃœ8ì¬ÊÔ-
-gsquid:S2147 "DCombine this catch with the one at line 29, which has the same body.(±Ÿ—±ÿÿÿÿÿ8ì¬ÊÔ-
+squid:S106&"9Replace this use of System.out or System.err by a logger.(ö¬8ì¬ÊÔ-
+U
+squid:S106."9Replace this use of System.out or System.err by a logger.(¾‚ƒ8ê„ƒ¼Ô-
+gsquid:S2147%"DCombine this catch with the one at line 34, which has the same body.(±Ÿ—±ÿÿÿÿÿ8ì¬ÊÔ-
 V
-squid:S106!"9Replace this use of System.out or System.err by a logger.(ö¬8ì¬ÊÔ-
+squid:S106 "9Replace this use of System.out or System.err by a logger.( “‘í8ì¬ÊÔ-
+Nsquid:S1068"+Remove this unused "userDao" private field.(­¶úÿÿÿÿ8Ï¸á»Ô-
+ysquid:S1450"VRemove the "userDao" field and declare it as a local variable in the relevant methods.(­¶úÿÿÿÿ8•Ûì»Ô-
+Qsquid:S1068".Remove this unused "accountDao" private field.(››¡îıÿÿÿÿ8•Ûì»Ô-
+|squid:S1450"YRemove the "accountDao" field and declare it as a local variable in the relevant methods.(››¡îıÿÿÿÿ8•Ûì»Ô-
+fsquid:UselessImportCheck";Remove this unused import 'com.company.app.models.Account'.(ã†§8•Ûì»Ô-
+isquid:UselessImportCheck"9Remove this unused import 'com.company.app.models.Users'.(³ §ıÿÿÿÿ8š°İ»Ô-

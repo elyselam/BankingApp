@@ -1,14 +1,14 @@
 
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8àÇÈ¥Ô-
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8àÇÈ¥Ô-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8àÇÈ¥Ô-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8àÇÈ¥Ô-
+gsquid:S2147"DCombine this catch with the one at line 21, which has the same body.(±Ÿ—±ÿÿÿÿÿ8àÇÈ¥Ô-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(àÁ³˜8àÇÈ¥Ô-
 tsquid:UselessImportCheck"DRemove this unused import 'com.company.app.services.AccountService'.(áÄ±Ÿÿÿÿÿÿ8àÇÈ¥Ô-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8àÇÈ¥Ô-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(àÁ³˜8àÇÈ¥Ô-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8àÇÈ¥Ô-
-[
-squid:S106."9Replace this use of System.out or System.err by a logger.(É¢ïıÿÿÿÿ8ÏĞóûÓ-
-nsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(Ø¸’„øÿÿÿÿ8àÇÈ¥Ô-
-gsquid:S2147"DCombine this catch with the one at line 22, which has the same body.(±Ÿ—±ÿÿÿÿÿ8àÇÈ¥Ô-
+ksquid:UselessImportCheck";Remove this unused import 'com.company.app.dao.AccountDao'.(âÖæÿÿÿÿÿ8·¯¨½Ô-
+\squid:S1854 "?Remove this useless assignment to local variable "inputAmount".(ñÉîm8·¯¨½Ô-
+Msquid:S1481 "0Remove this unused "inputAmount" local variable.(ñÉîm8·¯¨½Ô-

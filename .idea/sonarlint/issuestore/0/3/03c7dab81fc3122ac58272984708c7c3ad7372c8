@@ -1,12 +1,15 @@
 
 V
-squid:S106%"9Replace this use of System.out or System.err by a logger.(ö¬8šŠïÖÒ-
+squid:S106."9Replace this use of System.out or System.err by a logger.(ö¬8šŠïÖÒ-
 U
-squid:S106"9Replace this use of System.out or System.err by a logger.(ºˆ–k8º¸ÿ…Ó-
-gsquid:S2147$"DCombine this catch with the one at line 32, which has the same body.(±Ÿ—±ÿÿÿÿÿ8šŠïÖÒ-
+squid:S106""9Replace this use of System.out or System.err by a logger.(ºˆ–k8º¸ÿ…Ó-
 V
-squid:S106""9Replace this use of System.out or System.err by a logger.(ö¬8šŠïÖÒ-
+squid:S106("9Replace this use of System.out or System.err by a logger.( “‘í8šŠïÖÒ-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.( “‘í8šŠïÖÒ-
+squid:S106"9Replace this use of System.out or System.err by a logger.(Åê–¨8„®‚½Ô-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(Åê–¨8ëÅÎÖÒ-
+squid:S106+"9Replace this use of System.out or System.err by a logger.(ö¬8šŠïÖÒ-
+tsquid:UselessImportCheck"DRemove this unused import 'com.company.app.services.AccountService'.(áÄ±Ÿÿÿÿÿÿ8¶íş¼Ô-
+fsquid:UselessImportCheck";Remove this unused import 'com.company.app.models.Account'.(ã†§8¶íş¼Ô-
+gsquid:S2147-"DCombine this catch with the one at line 42, which has the same body.(±Ÿ—±ÿÿÿÿÿ8šŠïÖÒ-
+nsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(È «Ìúÿÿÿÿ8…Ş¹½Ô-

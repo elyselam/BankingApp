@@ -31,12 +31,8 @@ t
 Dsrc/main/java/com/company/app/screens/customer/WithdrawalScreen.java,5/b/5b352025cfb19a04b69807f58ed820b0c5beb815
 _
 /src/main/java/com/company/app/models/Users.java,1/5/15f834b1c689feb2b072b2f11ee99103e9cb345e
-t
-Dsrc/main/java/com/company/app/services/UserAuthenticateServices.java,b/b/bbf0c41e8c95cecf819fc40f791490c6748d39b8
 q
 Asrc/main/java/com/company/app/screens/customer/DepositScreen.java,e/c/ec6cb943bb5261fd6310552530af6f9f2d9fc112
-a
-1src/main/java/com/company/app/dao/Repository.java,c/d/cd4c916efe9ae52c9ff5e66099a233bd55ba141c
 b
 2src/main/java/com/company/app/dao/UserJDBCDao.java,b/1/b1dce69c1ba116879aa49ea2b13e32ee5b9d72ba
 a
@@ -47,7 +43,7 @@ e
 5src/main/java/com/company/app/dao/UserRepository.java,6/5/65671c44ae80863261826522df7e5fa0a459b3c7
 ^
 .src/main/java/com/company/app/dao/UserDao.java,8/1/81a6d1f37de8ac5df8426c905d72fe1f8613452c
-k
-;src/main/java/com/company/app/services/AccountServices.java,0/4/0402e346cbe15b686d14d9a7efe173a83970d2c6
-n
->src/main/java/com/company/app/services/UserDetailServices.java,e/8/e814fda7e9023d2267d8896dd16a761a96668e0a
+p
+@src/main/java/com/company/app/services/CustomerLoginService.java,5/1/5137d60744b87c891ed0b547d0700bd703e8dcd5
+u
+Esrc/main/java/com/company/app/screens/customer/ViewBalanceScreen.java,e/f/efabf660b6df534aadc3fdc4f50b6591a7100986
