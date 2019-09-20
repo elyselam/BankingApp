@@ -6,11 +6,11 @@ import java.util.HashMap;
 
 public class UserDao {
 
-    HashMap<String, Users> map = new HashMap<>();
+     private HashMap<String, Users> map = new HashMap<>();
+
     public Users getUser(String email) {
         return map.get(email);
     }
-
 
     //used in CustomerLoginService. returns bool
     public boolean checkEmailAndPassword(String email, String password) {
@@ -19,8 +19,9 @@ public class UserDao {
         return map.get(email).getPassword() == password.hashCode();
     }
 
-    public void createNewUser(String email, String password) {
-
+    public void createNewUser(String email, String password, int id) {
+        Users user = new Users(email, password, id);
+        map.put(email, user);
     }
 }
 

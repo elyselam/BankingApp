@@ -3,6 +3,7 @@ package com.company.app.screens;
 import com.company.app.screens.customer.CustomerHomeScreen;
 import com.company.app.screens.customer.CustomerLoginScreen;
 //import com.company.app.screens.employee.EmployeeScreen;
+import com.company.app.screens.employee.EmployeeScreen;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -51,7 +52,7 @@ public class WelcomeScreen implements Screen {
 
             //if input is "employee"
         } else if (i.equals("2")) {
-            //TODO newScreen = new EmployeeScreen();
+            newScreen = new EmployeeScreen();
             return newScreen;
         }
         return newScreen;

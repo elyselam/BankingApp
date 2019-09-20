@@ -31,8 +31,10 @@ public class AccountDao implements DaoInterface {
         return acct.getBalance();
     }
 
-    public void createNewAccount(String email) {
-
+    public int createNewAccount(String email) {
+        Account account = new Account();
+        map.put(account.getId(), account);
+        return account.getId();
     }
 }
 
