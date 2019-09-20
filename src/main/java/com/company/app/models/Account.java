@@ -11,7 +11,7 @@ public class Account implements Serializable {
     public Account() {
         //generate random numbers for customer id in range 10,000
         this.id = (new SecureRandom()).nextInt(10000);
-
+        this.balance = balance;
     }
 
     public int getId() {

@@ -1,6 +1,7 @@
 package com.company.app.services;
 import com.company.app.dao.AccountDao;
 import com.company.app.dao.UserDao;
+import com.company.app.dao.UserRepository;
 import com.company.app.models.Users;
 import com.company.app.screens.customer.CustomerHomeScreen;
 import com.company.app.screens.customer.CustomerLoginScreen;
@@ -9,10 +10,20 @@ import com.company.platform.Screen;
 
 public class CustomerLoginService {
 
-    public Screen login(String email, String password, Application app) {
+    private UserRepository userDao;
+    private AccountDao accountDao;
 
-        UserDao userDao = app.getUserDao();
-        AccountDao accountDao = app.getAccountDao();
+    public CustomerLoginService() {}
+
+    public void setUserDao(UserRepository userDao) {
+        this.userDao = userDao;
+    }
+
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
+
+    public Users login(String email, String password, Application app) {
 
         Users user = userDao.getUser(email);
         //if checkPassword returns true, set currentUser as this user

@@ -4,6 +4,9 @@ import com.company.app.dao.*;
 import com.company.app.models.Account;
 import com.company.app.models.Users;
 import com.company.app.screens.WelcomeScreen;
+import com.company.app.services.AccountServices;
+import com.company.app.services.CustomerLoginService;
+import com.company.app.services.EmailService;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
@@ -25,6 +28,8 @@ public class BankApplication extends Application {
 
     public void run(String[] args) {
 
+        init();
+
         while(currentScreen != null) {
             //invokes doScreen on currentScreen
             //this is the current instance of BookstoreApplication, and it's 'app'
@@ -33,6 +38,23 @@ public class BankApplication extends Application {
             //implicit upcast from BookstoreApplication to Application
             currentScreen = currentScreen.doScreen(scanner, this);
         }
+    }
+
+    private void init() {
+        //Phase 1
+        UserRepository userRepositoryFIO = new UserDao();
+        AccountRepository accountRepositoryFIO = new AccountDao();
+
+        //Phase 2
+        UserRepository userRepositoryJDBC = new UserJDBCDao();
+
+        accountServices = new AccountServices();
+        accountServices.setAccountDao(accountRepositoryFIO);
+
+        customerLoginService = new CustomerLoginService();
+        customerLoginService.setUserDao(userRepositoryJDBC);
+
+        emailService = new EmailService();
     }
 }
 

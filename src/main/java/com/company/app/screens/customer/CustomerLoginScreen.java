@@ -8,19 +8,17 @@ import com.company.app.services.CustomerLoginService;
 import com.company.app.system.BankApplication;
 import com.company.platform.Application;
 import com.company.platform.Screen;
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CustomerLoginScreen implements Screen{
 
-    private UserDao userDao;
-    private AccountDao accountDao;
-
+    private CustomerLoginService loginService;
 
     public Screen doScreen(Scanner scanner, Application app) {
-        userDao = app.getUserDao();
-        accountDao = app.getAccountDao();
+        loginService = app.getCustomerLoginService();
 
         System.out.println("Please enter your email");
 
@@ -47,6 +45,13 @@ public class CustomerLoginScreen implements Screen{
         String password = scanner.next();
 
         //calls login() in login service
-        return (new CustomerLoginService()).login(email, password, app);
+        Users u = loginService.login(email, password, null);
+
+        if(u == null) {
+            return new CustomerLoginScreen();
+        } else {
+            app.setCurrentUser(u);
+            return new CustomerHomeScreen();
+        }
     }
 }

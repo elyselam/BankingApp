@@ -56,7 +56,7 @@ public class EmployeeScreen implements Screen {
             }
             System.out.println("enter the password");
             String password = scanner.next();
-            
+
             int id = app.getAccountDao().createNewAccount(email);
 
             //id is returned from createNewAccount(email). referencing that account
