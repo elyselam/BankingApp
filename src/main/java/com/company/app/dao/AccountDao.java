@@ -31,5 +31,8 @@ public class AccountDao implements DaoInterface {
         return acct.getBalance();
     }
 
+    public void createNewAccount(String email) {
+
+    }
 }
 

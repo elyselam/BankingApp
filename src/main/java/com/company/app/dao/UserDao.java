@@ -18,5 +18,9 @@ public class UserDao {
         if(map.get(email) == null){return false;}
         return map.get(email).getPassword() == password.hashCode();
     }
+
+    public void createNewUser(String email, String password) {
+
+    }
 }
 
