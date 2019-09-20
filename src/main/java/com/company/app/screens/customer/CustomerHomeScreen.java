@@ -4,7 +4,7 @@ import com.company.app.dao.AccountDao;
 import com.company.app.dao.UserDao;
 import com.company.app.models.Account;
 import com.company.app.screens.WelcomeScreen;
-import com.company.app.services.AccountService;
+
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -40,10 +40,10 @@ public class CustomerHomeScreen implements Screen {
             scanner.next();
         } catch(RuntimeException ex){
             System.out.println(ex);
-
         }catch(Exception ex) {
             System.out.println(ex);
         }
+
         return screen;
     }
 
@@ -57,8 +57,7 @@ public class CustomerHomeScreen implements Screen {
         } else if (input.equals("2")) {
             newScreen = new WithdrawalScreen();
         } else if (input.equals("3")) {
-           // newScreen = new ViewBalanceScreen();
-
+           newScreen = new ViewBalanceScreen();
         } else if(input.equals("4") ) {
             newScreen = new WelcomeScreen();
 

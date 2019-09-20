@@ -19,16 +19,13 @@ public class AccountServices {
     }
 
     public double withdrawal(Account acct, double amount) {
-        if (acct.getBalance() < 0) {
-            System.out.println("Transaction failed, you have no money!");
+        if (acct.getBalance()-amount >= 0) {
+            System.out.println("Transaction failed");
         } else {
             acct.setBalance(acct.getBalance() - amount);
         }
         return acct.getBalance();
     }
 
-    public double viewBalance(Account acct) {
-        return acct.getBalance();
-    }
 }
 

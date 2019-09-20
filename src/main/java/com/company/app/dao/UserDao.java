@@ -13,9 +13,10 @@ public class UserDao {
 
 
     //used in CustomerLoginService. returns bool
-    public boolean checkPassword(Users user, String password) {
+    public boolean checkEmailAndPassword(String email, String password) {
         //hashcode returns a int that's why using ==
-        return user.getPassword() == password.hashCode();
+        if(map.get(email) == null){return false;}
+        return map.get(email).getPassword() == password.hashCode();
     }
 }
 

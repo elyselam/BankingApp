@@ -15,16 +15,19 @@ public class CustomerLoginService {
         AccountDao accountDao = app.getAccountDao();
 
         Users user = userDao.getUser(email);
-
         //if checkPassword returns true, set currentUser as this user
         //and send to CustomerHomeScreen
         //else, make them log in again
-        if (userDao.checkPassword(user, password)) {
+        System.out.println(user);
+
+        if (userDao.checkEmailAndPassword(email, password)) {
+
             app.setCurrentUser(user);
+
             return new CustomerHomeScreen();
         }
         else {
-            System.out.println("Invalid password!");
+            System.out.println("Invalid email/password!");
         }
         //make them log in again
         return new CustomerLoginScreen();

@@ -18,7 +18,17 @@ public class ViewBalanceScreen implements Screen {
         userDao = app.getUserDao();
         accountDao = app.getAccountDao();
 
-        System.out.println("Welcome back! How can we help you today?");
+        System.out.println("Welcome back! you have a balance of $"+app.getCurrentAccount().getBalance());
+
+        String menuText = "";
+        menuText = new StringMenuBuilder()
+                .addOption("1", "Deposit")
+                .addOption("2", "Withdraw")
+                .addOption("3", "Back")
+                .addOption("4", "Logout")
+                .build();
+
+        System.out.println(menuText);
 
         Screen screen = null;
         try {
@@ -28,13 +38,12 @@ public class ViewBalanceScreen implements Screen {
             scanner.next();
         } catch(RuntimeException ex){
             System.out.println(ex);
-
         }catch(Exception ex) {
             System.out.println(ex);
         }
+
         return screen;
     }
-
 
     public Screen doInput(Scanner scanner, Application app) throws Exception {
         Screen newScreen = null;
@@ -47,10 +56,13 @@ public class ViewBalanceScreen implements Screen {
             newScreen = new WithdrawalScreen();
 
         } else if (input.equals("3")) {
+            newScreen = new CustomerHomeScreen();
+        }else if (input.equals("4")) {
+            System.out.println("goodbye!");
+            newScreen = new CustomerLoginScreen();
+        }else{
             newScreen = new ViewBalanceScreen();
         }
-        System.out.println("goodbye!");
-        newScreen = new CustomerLoginScreen();
         return newScreen;
 
     }

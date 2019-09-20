@@ -1,5 +1,6 @@
 package com.company.app.screens.customer;
 import com.company.app.dao.AccountDao;
+import com.company.app.dao.UserDao;
 import com.company.app.models.Account;
 
 import com.company.app.services.AccountServices;
@@ -12,12 +13,10 @@ import java.util.Scanner;
 
 public class DepositScreen implements Screen {
 
-    Application app;
-
     public Screen doScreen(Scanner scanner, Application app) {
-        this.app = app;
         System.out.println("How much would you like to deposit?");
         Screen screen = null;
+
         try {
             screen = doInput(scanner, app);
         } catch (InputMismatchException ex) {
@@ -25,27 +24,26 @@ public class DepositScreen implements Screen {
             scanner.next();
         } catch (RuntimeException ex) {
             System.out.println(ex);
-
         } catch (Exception ex) {
             System.out.println(ex);
         }
+
         return screen;
     }
 
-
     public Screen doInput(Scanner scanner, Application app) throws Exception {
-        double input = scanner.nextDouble();
+        double sum = scanner.nextDouble();
         Screen newScreen = null;
 
-        //take amount input and pass into DepositServices
+        //take amount input and pass into AccountService
         AccountServices doDeposit = new AccountServices(app);
-        Account acct = new Account();
+        Account acct = app.getCurrentAccount();
 
-        doDeposit.deposit(acct, input);
+        doDeposit.deposit(acct, sum);
 
         //then confirms receipt
-        System.out.println("Deposit of " + input + "is successful");
-        System.out.println("Your balance is now " + acct.getBalance());
+        System.out.println("Deposit of $" + sum + " is successful");
+        System.out.println("Your balance is now $" + acct.getBalance());
 
         //and return to CustomerHomeScreen after successful deposit
         return new CustomerHomeScreen();

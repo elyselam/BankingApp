@@ -6,10 +6,16 @@ import com.company.app.models.Users;
 import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.Collection;
+import java.util.HashMap;
 
 
 public class AccountDao implements DaoInterface {
 
+    HashMap<Integer, Account> map = new HashMap<>();
+
+    public Account getAccount(int id) {
+        return map.get(id);
+    }
 
     @Override
     public void write() {
@@ -20,5 +26,10 @@ public class AccountDao implements DaoInterface {
     public void read() {
 
     }
+
+    public double viewBalance(Account acct) {
+        return acct.getBalance();
+    }
+
 }
 
