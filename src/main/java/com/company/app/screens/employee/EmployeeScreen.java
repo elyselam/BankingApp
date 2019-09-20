@@ -49,12 +49,14 @@ public class EmployeeScreen implements Screen {
         if (scanner.next().equals("1")){
             System.out.println("enter the email");
             String email = scanner.next();
+
             if(!(new EmailService()).checkEmailFormat(email)){
                 System.out.println("invaild email");
                 return new EmployeeScreen();
             }
             System.out.println("enter the password");
             String password = scanner.next();
+            
             int id = app.getAccountDao().createNewAccount(email);
 
             //id is returned from createNewAccount(email). referencing that account
