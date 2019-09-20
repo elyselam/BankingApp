@@ -1,17 +1,14 @@
 package com.company.app.system;
 
 import com.company.app.dao.*;
-import com.company.app.models.Account;
-import com.company.app.models.Users;
 import com.company.app.screens.WelcomeScreen;
 import com.company.app.services.AccountServices;
+import com.company.app.services.CreateUserService;
 import com.company.app.services.CustomerLoginService;
 import com.company.app.services.EmailService;
 import com.company.platform.Application;
 import com.company.platform.Screen;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class BankApplication extends Application {
@@ -41,21 +38,30 @@ public class BankApplication extends Application {
     }
 
     private void init() {
-        //Phase 1
-        UserRepository userRepositoryFIO = new UserDao();
-        AccountRepository accountRepositoryFIO = new AccountDao();
+//        //Phase 1
+//        UserRepository userRepositoryFIO = new UserDao();
+//        AccountRepository accountRepositoryFIO = new AccountJDBCDao();
 
         //Phase 2
-        UserRepository userRepositoryJDBC = new UserJDBCDao();
+        UserJDBCDao userRepository = new UserJDBCDao();
+        AccountJDBCDao accountRepository = new AccountJDBCDao();
 
         accountServices = new AccountServices();
-        accountServices.setAccountDao(accountRepositoryFIO);
+        accountServices.setAccountJDBCDao(accountRepository);
+
+        createUserService = new CreateUserService();
+        createUserService.setUserJDBCDao(userRepository);
+        createUserService.setAccountJDBCDao(accountRepository);
 
         customerLoginService = new CustomerLoginService();
-        customerLoginService.setUserDao(userRepositoryJDBC);
+        customerLoginService.setUserJDBCDao(userRepository);
+        customerLoginService.setAccountJDBCDao(accountRepository);
 
         emailService = new EmailService();
-        emailService.setUserDao(userRepositoryJDBC);
+
+
+
+
     }
 }
 

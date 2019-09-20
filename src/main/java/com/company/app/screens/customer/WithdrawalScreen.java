@@ -36,7 +36,7 @@ public class WithdrawalScreen implements Screen {
         Screen newScreen = null;
 
         //take amount input and pass into AccountService
-        AccountServices doWithdrawal = new AccountServices(app);
+        AccountServices doWithdrawal = app.getAccountServices();
         Account acct = app.getCurrentAccount();
 
         doWithdrawal.withdrawal(acct, sum);

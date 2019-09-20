@@ -1,10 +1,9 @@
 package com.company.app.screens.employee;
 
-import com.company.app.dao.AccountDao;
-import com.company.app.dao.UserDao;
 import com.company.app.screens.WelcomeScreen;
 
-import com.company.app.services.AccountServices;
+import com.company.app.screens.customer.CustomerLoginScreen;
+import com.company.app.services.CreateUserService;
 import com.company.app.services.EmailService;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
@@ -15,8 +14,6 @@ import java.util.Scanner;
 
 public class EmployeeScreen implements Screen {
 
-
-    @Override
     public Screen doScreen(Scanner scanner, Application app) {
         System.out.println("Welcome back! How can we help you today?");
         String menuText = "";
@@ -34,10 +31,10 @@ public class EmployeeScreen implements Screen {
             System.out.println("Input Mismatch");
             scanner.next();
         } catch (RuntimeException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
 
         } catch (Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
         return screen;
     }
@@ -45,25 +42,18 @@ public class EmployeeScreen implements Screen {
 
     public Screen doInput(Scanner scanner, Application app) throws Exception {
         Screen newScreen = null;
-
         if (scanner.next().equals("1")){
             System.out.println("enter the email");
             String email = scanner.next();
 
-            if(!(new EmailService()).checkEmailFormat(email)){
-                System.out.println("invaild email");
+            System.out.println("Please enter your password");
+            String password = scanner.next();
+            if(password.equals("")){
+                System.out.println("password cannot be blank");
                 return new EmployeeScreen();
             }
-            System.out.println("enter the password");
-            String password = scanner.next();
 
-            int id = app.getAccountDao().createNewAccount(email);
-
-            //id is returned from createNewAccount(email). referencing that account
-            app.getUserDao().createNewUser(email,password, id);
-            //now can key on id in User
-
-            System.out.println("User created");
+            app.createUserService().createUser(scanner, email, password);
             newScreen = new EmployeeScreen();
          //exit back to LoginScreen
         } else {

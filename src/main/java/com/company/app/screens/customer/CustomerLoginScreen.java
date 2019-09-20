@@ -1,14 +1,10 @@
 package com.company.app.screens.customer;
 
-import com.company.app.dao.AccountDao;
-import com.company.app.dao.UserDao;
-import com.company.app.models.Account;
 import com.company.app.models.Users;
 import com.company.app.services.CustomerLoginService;
-import com.company.app.system.BankApplication;
+import com.company.app.services.EmailService;
 import com.company.platform.Application;
 import com.company.platform.Screen;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -30,10 +26,9 @@ public class CustomerLoginScreen implements Screen{
             System.out.println("Input Mismatch");
             scanner.next();
         } catch(RuntimeException ex){
-            System.out.println(ex);
-
+            ex.printStackTrace();
         }catch(Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
         return screen;
     }
@@ -41,16 +36,22 @@ public class CustomerLoginScreen implements Screen{
 
     public Screen doInput(Scanner scanner,Application app) throws Exception {
         String email = scanner.next();
+        //test email for validity
+        if(!(new EmailService().checkEmailFormat(email))) {
+            System.out.println("invalid email");
+            return new CustomerLoginScreen();
+        }
         System.out.println("Please enter your password");
         String password = scanner.next();
 
         //calls login() in login service
-        Users u = loginService.login(email, password, null);
+        Users user = loginService.login(email, password, app);
 
-        if(u == null) {
+        if(user == null) {
+            System.out.println("invalid password");
             return new CustomerLoginScreen();
         } else {
-            app.setCurrentUser(u);
+            app.setCurrentUser(user);
             return new CustomerHomeScreen();
         }
     }

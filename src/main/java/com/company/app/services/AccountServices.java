@@ -1,6 +1,5 @@
 package com.company.app.services;
 
-import com.company.app.dao.AccountDao;
 import com.company.app.dao.AccountRepository;
 import com.company.app.models.Account;
 import com.company.platform.Application;
@@ -11,7 +10,7 @@ public class AccountServices {
 
     public AccountServices(){}
 
-    public void setAccountDao(AccountRepository accountDao) {
+    public void setAccountJDBCDao(AccountRepository accountDao) {
         this.accountDao = accountDao;
     }
 
@@ -29,7 +28,7 @@ public class AccountServices {
     public double withdrawal(Account acct, double amount) {
         //don't allow if withdrawal leaves balance below 0
         //set new balance on account
-        if (acct.getBalance() - amount >= 0) {
+        if (acct.getBalance() - amount < 0) {
             System.out.println("Transaction failed");
         } else {
             acct.setBalance(acct.getBalance() - amount);

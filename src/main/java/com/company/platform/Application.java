@@ -1,10 +1,10 @@
 package com.company.platform;
 
-import com.company.app.dao.AccountDao;
-import com.company.app.dao.UserDao;
+import com.company.app.dao.UserRepository;
 import com.company.app.models.Account;
 import com.company.app.models.Users;
 import com.company.app.services.AccountServices;
+import com.company.app.services.CreateUserService;
 import com.company.app.services.CustomerLoginService;
 import com.company.app.services.EmailService;
 
@@ -14,6 +14,7 @@ public abstract class Application {
     protected AccountServices accountServices;
     protected CustomerLoginService customerLoginService;
     protected EmailService emailService;
+    protected CreateUserService createUserService;
 
 
     //getters for services
@@ -26,6 +27,8 @@ public abstract class Application {
     public EmailService getEmailService() {
         return emailService;
     }
+    public CreateUserService createUserService() { return createUserService; }
+
 
 
 
@@ -41,11 +44,9 @@ public abstract class Application {
     public Account getCurrentAccount() {
         return currentAccount;
     }
-    public void setCurrentAccount(Account currentAccount) {
-        this.currentAccount = currentAccount;
+    public void setCurrentAccount(Account account) {
+        this.currentAccount = account;
     }
-
-
 
     public abstract void run(String[] args);
 

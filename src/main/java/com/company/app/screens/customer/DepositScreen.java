@@ -1,6 +1,4 @@
 package com.company.app.screens.customer;
-import com.company.app.dao.AccountDao;
-import com.company.app.dao.UserDao;
 import com.company.app.models.Account;
 
 import com.company.app.services.AccountServices;
@@ -23,9 +21,9 @@ public class DepositScreen implements Screen {
             System.out.println("Input Mismatch");
             scanner.next();
         } catch (RuntimeException ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         } catch (Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return screen;
@@ -36,7 +34,7 @@ public class DepositScreen implements Screen {
         Screen newScreen = null;
 
         //take amount input and pass into AccountService
-        AccountServices doDeposit = new AccountServices(app);
+        AccountServices doDeposit = app.getAccountServices();
         Account acct = app.getCurrentAccount();
 
         doDeposit.deposit(acct, sum);

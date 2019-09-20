@@ -1,8 +1,5 @@
 package com.company.app.screens.customer;
 
-import com.company.app.dao.AccountDao;
-import com.company.app.dao.UserDao;
-import com.company.app.models.Account;
 import com.company.app.screens.WelcomeScreen;
 
 import com.company.app.system.StringMenuBuilder;
@@ -14,8 +11,6 @@ import java.util.Scanner;
 
 public class CustomerHomeScreen implements Screen {
 
-    UserDao userDao;
-    AccountDao accountDao;
 
     public Screen doScreen(Scanner scanner, Application app) {
 
@@ -38,9 +33,9 @@ public class CustomerHomeScreen implements Screen {
             System.out.println("Input Mismatch");
             scanner.next();
         } catch(RuntimeException ex){
-            System.out.println(ex);
+            ex.printStackTrace();
         }catch(Exception ex) {
-            System.out.println(ex);
+            ex.printStackTrace();
         }
 
         return screen;

@@ -1,5 +1,6 @@
 package com.company.app.models;
 import java.io.Serializable;
+import java.util.Random;
 //email, password
 //CustomerLoginScreen
 
@@ -7,10 +8,16 @@ import java.io.Serializable;
 public class Users implements Serializable {
     private String email;
 
+    public int getId() {
+        return id;
+    }
+
+    private int id;
     private int password;
 
-    public Users(String email, String password {
+    public Users(String email, String password, int id) {
         this.email = email;
+        this. id = id;
         this.password = password.hashCode();
 
     }
