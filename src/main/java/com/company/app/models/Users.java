@@ -6,13 +6,13 @@ import java.io.Serializable;
 
 public class Users implements Serializable {
     private String email;
-    private final int accountID;
+
     private int password;
 
-    public Users(String email, String password, int accountID) {
+    public Users(String email, String password {
         this.email = email;
         this.password = password.hashCode();
-        this.accountID = accountID;
+
     }
 
     public String getEmail() {

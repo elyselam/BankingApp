@@ -10,41 +10,42 @@ import com.company.app.services.EmailService;
 
 public abstract class Application {
 
-    private Users currentUser;
-    private Account currentAccount;
-
     //create service references
     protected AccountServices accountServices;
     protected CustomerLoginService customerLoginService;
     protected EmailService emailService;
 
+
+    //getters for services
+    public AccountServices getAccountServices() {
+        return accountServices;
+    }
+    public CustomerLoginService getCustomerLoginService() {
+        return customerLoginService;
+    }
+    public EmailService getEmailService() {
+        return emailService;
+    }
+
+
+
+
+    private Users currentUser;
+    private Account currentAccount;
     public Users getCurrentUser() {
         return currentUser;
     }
-
     public void setCurrentUser(Users currentUser) {
         this.currentUser = currentUser;
     }
-
     public Account getCurrentAccount() {
         return currentAccount;
     }
-
     public void setCurrentAccount(Account currentAccount) {
         this.currentAccount = currentAccount;
     }
 
-    public AccountServices getAccountServices() {
-        return accountServices;
-    }
 
-    public CustomerLoginService getCustomerLoginService() {
-        return customerLoginService;
-    }
-
-    public EmailService getEmailService() {
-        return emailService;
-    }
 
     public abstract void run(String[] args);
 

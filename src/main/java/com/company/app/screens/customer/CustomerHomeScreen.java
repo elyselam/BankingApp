@@ -18,8 +18,7 @@ public class CustomerHomeScreen implements Screen {
     AccountDao accountDao;
 
     public Screen doScreen(Scanner scanner, Application app) {
-        userDao = app.getUserDao();
-        accountDao = app.getAccountDao();
+
 
         System.out.println("Welcome back! How can we help you today?");
         String menuText = "";

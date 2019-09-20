@@ -27,7 +27,7 @@ public class BankApplication extends Application {
     }
 
     public void run(String[] args) {
-
+        //make the connection between services and corresponding daos
         init();
 
         while(currentScreen != null) {
@@ -55,6 +55,7 @@ public class BankApplication extends Application {
         customerLoginService.setUserDao(userRepositoryJDBC);
 
         emailService = new EmailService();
+        emailService.setUserDao(userRepositoryJDBC);
     }
 }
 

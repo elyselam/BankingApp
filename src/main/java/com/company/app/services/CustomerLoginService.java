@@ -25,13 +25,13 @@ public class CustomerLoginService {
 
     public Users login(String email, String password, Application app) {
 
-        Users user = userDao.getUser(email);
+        Users user = userDao.getByEmail(email);
         //if checkPassword returns true, set currentUser as this user
         //and send to CustomerHomeScreen
         //else, make them log in again
         System.out.println(user);
 
-        if (userDao.checkEmailAndPassword(email, password)) {
+        if (userDao.getByEmail(email, password)) {
 
             app.setCurrentUser(user);
 
