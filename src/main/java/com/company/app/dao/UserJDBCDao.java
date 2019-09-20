@@ -26,6 +26,16 @@ public class UserJDBCDao implements UserRepository {
     public Users getById(int id) {
         return null;
     }
+
+    @Override
+    public void write() {
+
+    }
+
+    @Override
+    public void read() {
+
+    }
 }
 
     // don't forget to override you methods

@@ -8,124 +8,17 @@ import java.nio.file.FileAlreadyExistsException;
 import java.util.Collection;
 
 
-public class AccountDao implements UserRepository{
+public class AccountDao implements DaoInterface {
 
 
     @Override
-    public Users write(Users o) {
-        try {
-        ObjectOutputStream fileOutput = new ObjectOutputStream(new FileOutputStream(file));
-        map.put(userName, user);
-        System.out.println("Have been Written");
-        fileOutput.writeObject(map);
-        fileOutput.close();
+    public void write() {
 
-        }
-        catch(FileNotFoundException e){
-        e.printStackTrace();
-        }
-        catch(IOException e){
-        e.printStackTrace();
-        }
-        }
     }
 
     @Override
-    public Users read(Users o) {
-        try {
-        ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
-        Object userInfo =  fileInput.readObject();
-        fileInput.close();
-        System.out.println("Have been Read");
+    public void read() {
 
-        return (Account) map.get(userName);
-        }
-        catch(FileAlreadyExistsException e){
-        e.printStackTrace();
-        }
-        catch(ClassNotFoundException e){
-        e.printStackTrace();
-        }
-        catch(Exception e) {
-        e.printStackTrace();
-        }
-        return null;
-        }
     }
 }
-
-    @Override
-    public Users getById(int id) {
-        return null;
-    }
-
-
-    @Override
-    public Users getByEmail(String email) {
-        return null;
-    }
-}
-
-
-
-
-
-
-//    //output file
-//    public static final String file = "src/resources/data.txt";
-//    //object
-//    public HashMap<Integer, Account> map = new HashMap<>();
-//
-//
-//    public void AccountDao {
-////object = {email, {id, password, balance}}
-//
-//public void AccountDao() {
-//        Account newAccount = new Account();
-//        //(Account{id, password, balance})
-//        map.put( , newAccount);
-//        }
-//        }
-//
-//
-//public UsersDao Read(String userName){
-//        try {
-//        ObjectInputStream fileInput = new ObjectInputStream(new FileInputStream(file));
-//        Object userInfo =  fileInput.readObject();
-//        fileInput.close();
-//        System.out.println("Have been Read");
-//
-//        return (Account) map.get(userName);
-//        }
-//        catch(FileAlreadyExistsException e){
-//        e.printStackTrace();
-//        }
-//        catch(ClassNotFoundException e){
-//        e.printStackTrace();
-//        }
-//        catch(Exception e) {
-//        e.printStackTrace();
-//        }
-//        return null;
-//        }
-//
-//public void UsersDao Write(String userName, Account user){
-//        try {
-//        ObjectOutputStream fileOutput = new ObjectOutputStream(new FileOutputStream(file));
-//        map.put(userName, user);
-//        System.out.println("Have been Written");
-//        fileOutput.writeObject(map);
-//        fileOutput.close();
-//
-//        }
-//        catch(FileNotFoundException e){
-//        e.printStackTrace();
-//        }
-//        catch(IOException e){
-//        e.printStackTrace();
-//        }
-//        }
-
-
-
 

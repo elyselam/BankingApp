@@ -1,5 +1,4 @@
 package com.company.app.services;
-
 import com.company.app.dao.AccountDao;
 import com.company.app.dao.UserDao;
 import com.company.app.models.Users;
@@ -11,11 +10,15 @@ import com.company.platform.Screen;
 public class CustomerLoginService {
 
     public Screen login(String email, String password, Application app) {
+
         UserDao userDao = app.getUserDao();
         AccountDao accountDao = app.getAccountDao();
 
         Users user = userDao.getUser(email);
 
+        //if checkPassword returns true, set currentUser as this user
+        //and send to CustomerHomeScreen
+        //else, make them log in again
         if (userDao.checkPassword(user, password)) {
             app.setCurrentUser(user);
             return new CustomerHomeScreen();
@@ -23,7 +26,7 @@ public class CustomerLoginService {
         else {
             System.out.println("Invalid password!");
         }
+        //make them log in again
         return new CustomerLoginScreen();
     }
-
 }

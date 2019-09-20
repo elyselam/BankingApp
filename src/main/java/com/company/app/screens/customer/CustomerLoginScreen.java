@@ -45,6 +45,8 @@ public class CustomerLoginScreen implements Screen{
         String email = scanner.next();
         System.out.println("Please enter your password");
         String password = scanner.next();
+
+        //calls login() in login service
         return (new CustomerLoginService()).login(email, password, app);
     }
 }

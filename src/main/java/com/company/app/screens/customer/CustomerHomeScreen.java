@@ -61,6 +61,7 @@ public class CustomerHomeScreen implements Screen {
 
         } else if(input.equals("4") ) {
             newScreen = new WelcomeScreen();
+
             //log them out, reset current account
             app.setCurrentAccount(null);
             app.setCurrentUser(null);

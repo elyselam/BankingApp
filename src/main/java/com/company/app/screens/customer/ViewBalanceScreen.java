@@ -3,11 +3,13 @@ package com.company.app.screens.customer;
 import com.company.app.dao.AccountDao;
 import com.company.app.dao.UserDao;
 import com.company.app.system.StringMenuBuilder;
+import com.company.platform.Application;
 import com.company.platform.Screen;
 
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
-public class ViewBalanceScreen {
+public class ViewBalanceScreen implements Screen {
 
     UserDao userDao;
     AccountDao accountDao;
@@ -16,9 +18,7 @@ public class ViewBalanceScreen {
         userDao = app.getUserDao();
         accountDao = app.getAccountDao();
 
-
         System.out.println("Welcome back! How can we help you today?");
-
 
         Screen screen = null;
         try {
@@ -57,4 +57,4 @@ public class ViewBalanceScreen {
 
 }
 
-}
+
