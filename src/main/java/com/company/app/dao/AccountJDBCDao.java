@@ -22,7 +22,7 @@ public class AccountJDBCDao implements AccountRepository{
     }
 
 
-    public int createNewAccount(String email) {
+    public int createNewAccount() {
         Account account = new Account();
         //id is integer
         map.put(account.getId(), account);
@@ -31,16 +31,6 @@ public class AccountJDBCDao implements AccountRepository{
     }
 
 
-
-//    @Override
-//    public void write() {
-//
-//    }
-//
-//    @Override
-//    public void read() {
-//
-//    }
 
 
     @Override

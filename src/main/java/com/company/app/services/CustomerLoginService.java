@@ -30,10 +30,6 @@ public class CustomerLoginService {
         //and send to CustomerHomeScreen
         //else, make them log in again
 
-//        System.out.println("user " +user);
-//        System.out.println("id " +id);
-//        System.out.println("curr " + currentAccount);
-
 
         if (userDao.getByEmail(email) != null) {
             app.setCurrentUser(user);

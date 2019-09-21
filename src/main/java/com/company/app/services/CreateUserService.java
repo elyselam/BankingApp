@@ -27,7 +27,7 @@ public class CreateUserService {
             System.out.println("invalid email");
         }
         //set id, createNewAccount
-        int id = accountJDBCDao.createNewAccount(email);
+        int id = accountJDBCDao.createNewAccount();
         //id is returned from createNewAccount(email). referencing that account
         userJDBCDao.createNewUser(email,password, id);
         //now can key on id in User

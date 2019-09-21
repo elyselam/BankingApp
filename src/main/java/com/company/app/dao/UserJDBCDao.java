@@ -12,6 +12,10 @@ public class UserJDBCDao implements UserRepository {
 
     private HashMap<String, Users> map = new HashMap<>();
 
+    public void createNewUser(String email, String password, int id) {
+        Users user = new Users(email, password, id);
+        save(user);
+    }
 
     @Override
     public Users getByEmail(String email) {
@@ -154,10 +158,7 @@ public class UserJDBCDao implements UserRepository {
 
     }
 
-    public void createNewUser(String email, String password, int id) {
-        Users user = new Users(email, password, id);
-        save(user);
-    }
+
 }
 
     // don't forget to override you methods

@@ -8,10 +8,6 @@ import java.util.Random;
 public class Users implements Serializable {
     private String email;
 
-    public int getId() {
-        return id;
-    }
-
     private int id;
     private int password;
 
@@ -19,8 +15,10 @@ public class Users implements Serializable {
         this.email = email;
         this. id = id;
         this.password = password.hashCode();
-
     }
+
+    public int getId() { return id; }
+
 
     public String getEmail() {
         return email;
