@@ -16,7 +16,7 @@ public class CustomerLoginScreen implements Screen{
     public Screen doScreen(Scanner scanner, Application app) {
         loginService = app.getCustomerLoginService();
 
-        System.out.println("Please enter your email");
+        System.out.println("Please input your email");
 
         Screen screen = null;
 
@@ -41,7 +41,7 @@ public class CustomerLoginScreen implements Screen{
             System.out.println("invalid email");
             return new CustomerLoginScreen();
         }
-        System.out.println("Please enter your password");
+        System.out.println("Please input your password");
         String password = scanner.next();
 
         //calls login() in login service

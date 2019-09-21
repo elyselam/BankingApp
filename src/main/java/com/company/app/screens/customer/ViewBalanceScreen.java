@@ -12,8 +12,8 @@ public class ViewBalanceScreen implements Screen {
 
     public Screen doScreen(Scanner scanner, Application app) {
 
-        System.out.println("Welcome back! you have a balance of $"+app.getCurrentAccount().getBalance());
-
+        System.out.println("\n" + "You have a balance of $"+app.getCurrentAccount().getBalance());
+        System.out.println("\n" + "What else would you like to do?");
         String menuText = "";
         menuText = new StringMenuBuilder()
                 .addOption("1", "Deposit")
@@ -58,9 +58,7 @@ public class ViewBalanceScreen implements Screen {
             newScreen = new ViewBalanceScreen();
         }
         return newScreen;
-
     }
-
 }
 
 

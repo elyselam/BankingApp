@@ -57,10 +57,6 @@ public class BankApplication extends Application {
         customerLoginService.setUserJDBCDao(userRepository);
         customerLoginService.setAccountJDBCDao(accountRepository);
 
-        emailService = new EmailService();
-
-
-
 
     }
 }

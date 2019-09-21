@@ -15,7 +15,7 @@ public class CustomerHomeScreen implements Screen {
     public Screen doScreen(Scanner scanner, Application app) {
 
 
-        System.out.println("Welcome back! How can we help you today?");
+        System.out.println("\n" + "How can we help you today?");
         String menuText = "";
         menuText = new StringMenuBuilder()
                 .addOption("1", "Deposit")

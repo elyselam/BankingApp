@@ -13,7 +13,6 @@ public abstract class Application {
     //create service references
     protected AccountServices accountServices;
     protected CustomerLoginService customerLoginService;
-    protected EmailService emailService;
     protected CreateUserService createUserService;
 
 
@@ -24,10 +23,7 @@ public abstract class Application {
     public CustomerLoginService getCustomerLoginService() {
         return customerLoginService;
     }
-    public EmailService getEmailService() {
-        return emailService;
-    }
-    public CreateUserService createUserService() { return createUserService; }
+    public CreateUserService getCreateUserService() { return createUserService; }
 
 
 
@@ -35,9 +31,7 @@ public abstract class Application {
 
     private Users currentUser;
     private Account currentAccount;
-    public Users getCurrentUser() {
-        return currentUser;
-    }
+    public Users getCurrentUser() { return currentUser; }
     public void setCurrentUser(Users currentUser) {
         this.currentUser = currentUser;
     }

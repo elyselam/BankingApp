@@ -27,9 +27,9 @@ public class AccountServices {
 
     public double withdrawal(Account acct, double amount) {
         //don't allow if withdrawal leaves balance below 0
-        //set new balance on account
+        //set new balance
         if (acct.getBalance() - amount < 0) {
-            System.out.println("Transaction failed");
+            System.out.println("\n" + "Transaction failed, insufficient balance.");
         } else {
             acct.setBalance(acct.getBalance() - amount);
             accountDao.save(acct);

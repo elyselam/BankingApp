@@ -21,12 +21,13 @@ public class AccountJDBCDao implements AccountRepository{
         return acct.getBalance();
     }
 
+
     public int createNewAccount(String email) {
         Account account = new Account();
         //id is integer
-        System.out.println(account);
         map.put(account.getId(), account);
-        return account.getId(); //
+        //email, {id, balance}
+        return account.getId();
     }
 
 

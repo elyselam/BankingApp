@@ -2,9 +2,6 @@ package com.company.app.screens.employee;
 
 import com.company.app.screens.WelcomeScreen;
 
-import com.company.app.screens.customer.CustomerLoginScreen;
-import com.company.app.services.CreateUserService;
-import com.company.app.services.EmailService;
 import com.company.app.system.StringMenuBuilder;
 import com.company.platform.Application;
 import com.company.platform.Screen;
@@ -43,17 +40,17 @@ public class EmployeeScreen implements Screen {
     public Screen doInput(Scanner scanner, Application app) throws Exception {
         Screen newScreen = null;
         if (scanner.next().equals("1")){
-            System.out.println("enter the email");
+            System.out.println("\n" + "Create customer account by inputting his/her email below:");
             String email = scanner.next();
 
-            System.out.println("Please enter your password");
+            System.out.println("Please enter his/her password");
             String password = scanner.next();
             if(password.equals("")){
                 System.out.println("password cannot be blank");
                 return new EmployeeScreen();
             }
 
-            app.createUserService().createUser(scanner, email, password);
+            app.getCreateUserService().createUser(scanner, email, password);
             newScreen = new EmployeeScreen();
          //exit back to LoginScreen
         } else {

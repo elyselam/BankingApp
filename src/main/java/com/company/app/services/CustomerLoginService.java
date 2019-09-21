@@ -29,9 +29,10 @@ public class CustomerLoginService {
         //if checkPassword returns true, set currentUser as this user
         //and send to CustomerHomeScreen
         //else, make them log in again
-        System.out.println("user " +user);
-        System.out.println("id " +id);
-        System.out.println("curr " + currentAccount);
+
+//        System.out.println("user " +user);
+//        System.out.println("id " +id);
+//        System.out.println("curr " + currentAccount);
 
 
         if (userDao.getByEmail(email) != null) {

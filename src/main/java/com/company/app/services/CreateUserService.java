@@ -22,9 +22,11 @@ public class CreateUserService {
     }
 
     public void createUser(Scanner scanner, String email, String password) {
+        //check if email has valid format
         if(!(new EmailService()).checkEmailFormat(email)){
             System.out.println("invalid email");
         }
+        //set id, createNewAccount
         int id = accountJDBCDao.createNewAccount(email);
         //id is returned from createNewAccount(email). referencing that account
         userJDBCDao.createNewUser(email,password, id);

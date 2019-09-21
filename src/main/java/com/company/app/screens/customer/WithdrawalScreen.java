@@ -41,10 +41,6 @@ public class WithdrawalScreen implements Screen {
 
         doWithdrawal.withdrawal(acct, sum);
 
-        //then confirms receipt
-        System.out.println("Withdrawal of $" + sum + " is successful");
-        System.out.println("Your balance is now $" + acct.getBalance());
-
         //and return to CustomerHomeScreen after successful withdrawal
         return new CustomerHomeScreen();
     }
