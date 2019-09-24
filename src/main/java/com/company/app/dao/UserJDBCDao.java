@@ -12,7 +12,7 @@ import java.util.List;
 public class UserJDBCDao implements UserRepository {
 
     public Users getByEmail(String email) {
-        String sql = "SELECT id, email, pword from USERS where email = ?";
+        String sql = "SELECT email, pword from USERS where email = ?";
         System.out.println("Executing statement \n " + sql);
         try {
             Connection c = Main.manager.getConnection();
@@ -25,7 +25,7 @@ public class UserJDBCDao implements UserRepository {
             while(results.next()){
                 int id = results.getInt("id");
                 String _email = results.getString("email");
-                u = new Users (id, _email);
+                u = new Users (id, email);
             }
             return u;
         } catch (SQLException e) {
@@ -35,6 +35,7 @@ public class UserJDBCDao implements UserRepository {
     }
 
     public Users findById(int id) {
+        return null;
 
     }
 
@@ -55,7 +56,7 @@ public class UserJDBCDao implements UserRepository {
                 String _email = results.getString("email");
                 String password = results.getString("password");
 
-                users.add(new Users(id, _email, password));
+                users.add(new Users(_email, password));
             }
             return users;
 
@@ -86,7 +87,7 @@ public class UserJDBCDao implements UserRepository {
                 // Hopefully the new id
                 statement.registerOutParameter(1, Types.INTEGER);
                 statement.setString(2, obj.getEmail());
-                statement.setString(3, obj.getPassword());
+                statement.setInt(3, obj.getPassword());
 
                 // turn of auto-commit
                 // we want to control the transaction
