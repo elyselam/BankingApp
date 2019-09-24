@@ -9,12 +9,12 @@ public class Users implements Serializable {
     private String email;
 
     private int id;
-    private int password;
+    private String password;
 
     public Users(String email, String password, int id) {
         this.email = email;
         this. id = id;
-        this.password = password.hashCode();
+        this.password = password.hashCode()+"";
     }
 
     public int getId() { return id; }
@@ -24,7 +24,7 @@ public class Users implements Serializable {
         return email;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 

@@ -8,12 +8,11 @@ public class Account implements Serializable {
     private final int id;
     private double balance = 0;
 
-    public Account() {
-        //generate random numbers for customer id in range 10,000
-        this.id = (new SecureRandom()).nextInt(10000);
+    public Account(int id, double balance) {
+        this.id = id;
         this.balance = balance;
     }
-
+    
     public int getId() {
         return id;
     }

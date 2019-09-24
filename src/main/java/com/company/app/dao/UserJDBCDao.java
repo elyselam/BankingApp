@@ -10,21 +10,26 @@ import java.util.List;
 
 public class UserJDBCDao implements UserRepository {
 
+    private static final String DEFAULT_SCHEMA="banking_app";
+
     public Users getByEmail(String email) {
+
+        String sql1 = String.format("SELECT email, pword from %s.user_table where email = ?", DEFAULT_SCHEMA);
         String sql = "SELECT email, pword from user_table where email = ?";
         System.out.println("Executing statement \n " + sql);
         try {
             Connection c = Main.manager.getConnection();
 
-            PreparedStatement statement = c.prepareStatement(sql);
+            PreparedStatement statement = c.prepareStatement(sql1);
             statement.setString(1, email);
 
             ResultSet results = statement.executeQuery();
             Users u = null;
             while(results.next()){
-                String email = results.getInt("email");
-                int pword = results.getInt("pword");
-                u = new Users (email, pword);
+                int id = results.getInt("id");
+                String _email = results.getString("email");
+                String _pword = results.getString("pword");
+                u = new Users (_email, _pword, id);
             }
             return u;
         } catch (SQLException e) {
@@ -51,7 +56,7 @@ public class UserJDBCDao implements UserRepository {
                 String _email = results.getString("email");
                 String password = results.getString("password");
 
-                users.add(new Users(_email, password));
+                users.add(new Users(_email, password, id));
             }
             return users;
 
@@ -82,7 +87,7 @@ public class UserJDBCDao implements UserRepository {
                 // Hopefully the new id
                 statement.registerOutParameter(1, Types.INTEGER);
                 statement.setString(2, obj.getEmail());
-                statement.setInt(3, obj.getPassword());
+                statement.setString(3, obj.getPassword());
 
                 // turn of auto-commit
                 // we want to control the transaction
@@ -122,24 +127,23 @@ public class UserJDBCDao implements UserRepository {
         try {
             Connection c = Main.manager.getConnection();
             PreparedStatement statement = c.prepareStatement(sql);
-            statement.setString(1, "e@gmail.com");
+            statement.setString(1, obj.getEmail());
 
             int row = statement.executeUpdate();
 
             //print row deleted
             System.out.println("row deleted" + row);
 
-            ResultSet results = statement.executeQuery();
-
-    } catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
 
 
 
 
 
-        public Users findById(int id) {
+    public Users findById(int id) {
         return null;
 
     }
