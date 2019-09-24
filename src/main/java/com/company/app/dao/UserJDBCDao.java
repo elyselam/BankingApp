@@ -6,13 +6,12 @@ import com.company.app.models.Users;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 
 public class UserJDBCDao implements UserRepository {
 
     public Users getByEmail(String email) {
-        String sql = "SELECT email, pword from USERS where email = ?";
+        String sql = "SELECT email, pword from user_table where email = ?";
         System.out.println("Executing statement \n " + sql);
         try {
             Connection c = Main.manager.getConnection();
@@ -23,9 +22,9 @@ public class UserJDBCDao implements UserRepository {
             ResultSet results = statement.executeQuery();
             Users u = null;
             while(results.next()){
-                int id = results.getInt("id");
-                String _email = results.getString("email");
-                u = new Users (id, email);
+                String email = results.getInt("email");
+                int pword = results.getInt("pword");
+                u = new Users (email, pword);
             }
             return u;
         } catch (SQLException e) {
@@ -34,10 +33,6 @@ public class UserJDBCDao implements UserRepository {
         return null;
     }
 
-    public Users findById(int id) {
-        return null;
-
-    }
 
     public Collection<Users> findAll() {
 
@@ -122,6 +117,30 @@ public class UserJDBCDao implements UserRepository {
 
     @Override
     public void delete(Users obj) {
+        String sql = "DELETE from user_table where email = ?";
+        System.out.println("Executing statement \n " + sql);
+        try {
+            Connection c = Main.manager.getConnection();
+            PreparedStatement statement = c.prepareStatement(sql);
+            statement.setString(1, "e@gmail.com");
+
+            int row = statement.executeUpdate();
+
+            //print row deleted
+            System.out.println("row deleted" + row);
+
+            ResultSet results = statement.executeQuery();
+
+    } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+
+        public Users findById(int id) {
+        return null;
 
     }
 
